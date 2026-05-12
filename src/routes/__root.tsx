@@ -76,11 +76,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Everipe — Stronger Harvests, Longer Freshness, Zero Waste" },
       { name: "description", content: "TAEC: a 100% plant-based spray that extends fresh produce shelf life — no cold chain required." },
       { name: "author", content: "Everipe" },
-      { property: "og:title", content: "Everipe — Postharvest Protection for the World" },
-      { property: "og:description", content: "Thermal Adaptive Edible Coating. Built in Kenya, scaling globally." },
+      { property: "og:title", content: "Everipe — Stronger Harvests, Longer Freshness, Zero Waste" },
+      { property: "og:description", content: "TAEC: a 100% plant-based spray that extends fresh produce shelf life — no cold chain required." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@everipe" },
+      { name: "twitter:title", content: "Everipe — Stronger Harvests, Longer Freshness, Zero Waste" },
+      { name: "twitter:description", content: "TAEC: a 100% plant-based spray that extends fresh produce shelf life — no cold chain required." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea37b242-5dd1-4251-84f3-0a9d08ada2fc" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea37b242-5dd1-4251-84f3-0a9d08ada2fc" },
     ],
     links: [
       {
