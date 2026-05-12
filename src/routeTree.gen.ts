@@ -9,8 +9,50 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TechnologyRouteImport } from './routes/technology'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RetailersRouteImport } from './routes/retailers'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as OurStoryRouteImport } from './routes/our-story'
+import { Route as FarmersRouteImport } from './routes/farmers'
+import { Route as ExportersRouteImport } from './routes/exporters'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TechnologyRoute = TechnologyRouteImport.update({
+  id: '/technology',
+  path: '/technology',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RetailersRoute = RetailersRouteImport.update({
+  id: '/retailers',
+  path: '/retailers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurStoryRoute = OurStoryRouteImport.update({
+  id: '/our-story',
+  path: '/our-story',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FarmersRoute = FarmersRouteImport.update({
+  id: '/farmers',
+  path: '/farmers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExportersRoute = ExportersRouteImport.update({
+  id: '/exporters',
+  path: '/exporters',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +61,130 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/exporters': typeof ExportersRoute
+  '/farmers': typeof FarmersRoute
+  '/our-story': typeof OurStoryRoute
+  '/products': typeof ProductsRoute
+  '/retailers': typeof RetailersRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/technology': typeof TechnologyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/exporters': typeof ExportersRoute
+  '/farmers': typeof FarmersRoute
+  '/our-story': typeof OurStoryRoute
+  '/products': typeof ProductsRoute
+  '/retailers': typeof RetailersRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/technology': typeof TechnologyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/exporters': typeof ExportersRoute
+  '/farmers': typeof FarmersRoute
+  '/our-story': typeof OurStoryRoute
+  '/products': typeof ProductsRoute
+  '/retailers': typeof RetailersRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/technology': typeof TechnologyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/exporters'
+    | '/farmers'
+    | '/our-story'
+    | '/products'
+    | '/retailers'
+    | '/sitemap.xml'
+    | '/technology'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/exporters'
+    | '/farmers'
+    | '/our-story'
+    | '/products'
+    | '/retailers'
+    | '/sitemap.xml'
+    | '/technology'
+  id:
+    | '__root__'
+    | '/'
+    | '/exporters'
+    | '/farmers'
+    | '/our-story'
+    | '/products'
+    | '/retailers'
+    | '/sitemap.xml'
+    | '/technology'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ExportersRoute: typeof ExportersRoute
+  FarmersRoute: typeof FarmersRoute
+  OurStoryRoute: typeof OurStoryRoute
+  ProductsRoute: typeof ProductsRoute
+  RetailersRoute: typeof RetailersRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TechnologyRoute: typeof TechnologyRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/technology': {
+      id: '/technology'
+      path: '/technology'
+      fullPath: '/technology'
+      preLoaderRoute: typeof TechnologyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/retailers': {
+      id: '/retailers'
+      path: '/retailers'
+      fullPath: '/retailers'
+      preLoaderRoute: typeof RetailersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-story': {
+      id: '/our-story'
+      path: '/our-story'
+      fullPath: '/our-story'
+      preLoaderRoute: typeof OurStoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/farmers': {
+      id: '/farmers'
+      path: '/farmers'
+      fullPath: '/farmers'
+      preLoaderRoute: typeof FarmersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/exporters': {
+      id: '/exporters'
+      path: '/exporters'
+      fullPath: '/exporters'
+      preLoaderRoute: typeof ExportersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +197,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ExportersRoute: ExportersRoute,
+  FarmersRoute: FarmersRoute,
+  OurStoryRoute: OurStoryRoute,
+  ProductsRoute: ProductsRoute,
+  RetailersRoute: RetailersRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TechnologyRoute: TechnologyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
