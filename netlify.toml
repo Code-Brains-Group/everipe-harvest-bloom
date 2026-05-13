@@ -1,9 +1,9 @@
 [build]
-  command = "NITRO_PRESET=netlify bun run build"
-  publish = ".output/public"
+  command = "npm run build"
+  publish = "dist/client"
 
 [functions]
-  directory = ".output/server"
+  directory = "dist/server"
   node_bundler = "esbuild"
 
 # TanStack Start emits a Netlify Function as the SSR entry.
