@@ -27,13 +27,31 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
   // Reveal-on-scroll
   useEffect(() => {
-    const els = document.querySelectorAll(".reveal");
+    document.documentElement.classList.add("js");
+    let raf = 0;
     const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("in")),
-      { threshold: 0.12 }
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
+        }),
+      { threshold: 0.05, rootMargin: "0px 0px -5% 0px" }
     );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    const bind = () => {
+      document.querySelectorAll(".reveal:not(.in)").forEach((el) => io.observe(el));
+    };
+    raf = requestAnimationFrame(bind);
+    // Safety net: ensure all reveal elements become visible after 2s
+    const safety = window.setTimeout(() => {
+      document.querySelectorAll(".reveal:not(.in)").forEach((el) => el.classList.add("in"));
+    }, 2000);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(safety);
+      io.disconnect();
+    };
   }, [path]);
 
   return (
