@@ -61,10 +61,10 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             ))}
           </nav>
           <div className="hidden md:flex items-center gap-3">
-            <Link to="/our-story" className={`text-sm px-4 py-2 rounded-full border ${scrolled ? "border-ink/20 text-ink hover:bg-ink hover:text-cream" : "border-white/40 text-white hover:bg-white hover:text-teal"}`}>
+            <Link to="/contact" className={`text-sm px-4 py-2 rounded-full border ${scrolled ? "border-ink/20 text-ink hover:bg-ink hover:text-cream" : "border-white/40 text-white hover:bg-white hover:text-teal"}`}>
               Partner With Us
             </Link>
-            <Link to="/our-story" className="btn-primary text-sm !py-2.5">Get in Touch</Link>
+            <Link to="/contact" className="btn-primary text-sm !py-2.5">Get in Touch</Link>
           </div>
           <button onClick={() => setOpen(true)} className={`lg:hidden p-2 ${scrolled ? "text-ink" : "text-white"}`} aria-label="Menu">
             <Menu className="w-6 h-6" />
@@ -82,7 +82,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             {NAV.map((n) => (
               <Link key={n.to} to={n.to} className="font-serif text-3xl">{n.label}</Link>
             ))}
-            <Link to="/our-story" className="mt-6 px-6 py-3 rounded-full bg-white text-teal font-medium">Get in Touch</Link>
+            <Link to="/contact" className="mt-6 px-6 py-3 rounded-full bg-white text-teal font-medium">Get in Touch</Link>
           </nav>
         </div>
       )}
@@ -103,7 +103,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             </div>
             <FooterCol title="Everipe" links={[["About", "/our-story"], ["Technology", "/technology"], ["Products", "/products"]]} />
             <FooterCol title="Stakeholders" links={[["Farmers", "/farmers"], ["Exporters", "/exporters"], ["Retailers", "/retailers"]]} />
-            <FooterCol title="Contact" links={[["info@everipe.com", "mailto:info@everipe.com"], ["Partner with Us", "/our-story"], ["Support", "/our-story"]]} />
+            <FooterCol title="Contact" links={[["hello@everipe.com", "mailto:hello@everipe.com"], ["Partner with Us", "/contact"], ["Get in Touch", "/contact"]]} />
           </div>
           <div className="mt-16 pt-8 border-t border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs text-white/55">
             <p>© 2024 Everipe. Advanced Postharvest Protection for Global Supply Chains.</p>

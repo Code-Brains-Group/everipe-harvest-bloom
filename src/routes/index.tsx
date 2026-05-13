@@ -26,7 +26,13 @@ function Home() {
     <>
       {/* HERO */}
       <section className="relative min-h-screen flex items-end overflow-hidden">
-        <img src={hero} alt="Workers applying TAEC spray to fresh produce in an East African packhouse" className="absolute inset-0 w-full h-full object-cover" />
+        <img
+          src={hero}
+          alt="Workers applying TAEC spray to fresh produce in an East African packhouse"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-ink/40" />
         <div className="relative container-x pb-20 md:pb-28 pt-32 text-white">
           <div className="max-w-4xl">
