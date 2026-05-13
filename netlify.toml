@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "dist/client"
+
+[functions]
+  directory = "dist/server"
+  node_bundler = "esbuild"
+
+# TanStack Start emits a Netlify Function as the SSR entry.
+# All non-static requests are routed to it.
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200
+  force = false
