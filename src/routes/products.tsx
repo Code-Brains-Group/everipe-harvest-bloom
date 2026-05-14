@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import bloomy from "@/assets/bloomy-flowers.jpg";
 import veggie from "@/assets/veggie-vegetables.jpg";
 import fruity from "@/assets/fruity-fruits.jpg";
+import { VariantCarousel } from "@/components/VariantCarousel";
 
 export const Route = createFileRoute("/products")({
   head: () => ({
@@ -62,13 +63,16 @@ function Products() {
             <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl mt-4 leading-[1.02]">Extend shelf life. Eliminate pathogens.</h2>
             <p className="mt-6 text-lg text-ink/70 max-w-xl">A 70% shelf-life extension across our vegetable line. Tap any variety to see coated vs uncoated.</p>
           </div>
-          <VariantGallery items={[
-            { slug: "tomato", name: "Tomato", img: veggie },
-            { slug: "kale", name: "Kale", img: veggie },
-            { slug: "cucumber", name: "Cucumber", img: veggie },
-            { slug: "pepper", name: "Pepper", img: veggie },
-            { slug: "bean", name: "Bean", img: veggie },
-          ]} />
+          <VariantCarousel
+            lineLabel="Veggie"
+            items={[
+              { slug: "tomato", name: "Tomato", img: veggie },
+              { slug: "kale", name: "Kale", img: veggie },
+              { slug: "cucumber", name: "Cucumber", img: veggie },
+              { slug: "pepper", name: "Pepper", img: veggie },
+              { slug: "bean", name: "Bean", img: veggie },
+            ]}
+          />
         </div>
       </section>
 
@@ -80,13 +84,16 @@ function Products() {
             <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl mt-4 leading-[1.02]">Variety-specific protection. Precisely formulated.</h2>
             <p className="mt-6 text-lg text-ink/70 max-w-xl">3× longer shelf life across our fruit line. Tap any variety to compare coated vs uncoated.</p>
           </div>
-          <VariantGallery items={[
-            { slug: "avocado", name: "Avocado", img: fruity },
-            { slug: "pineapple", name: "Pineapple", img: fruity },
-            { slug: "mango", name: "Mango", img: fruity },
-            { slug: "papaya", name: "Papaya", img: fruity },
-            { slug: "apple", name: "Apple", img: fruity },
-          ]} />
+          <VariantCarousel
+            lineLabel="Fruity"
+            items={[
+              { slug: "avocado", name: "Avocado", img: fruity },
+              { slug: "pineapple", name: "Pineapple", img: fruity },
+              { slug: "mango", name: "Mango", img: fruity },
+              { slug: "papaya", name: "Papaya", img: fruity },
+              { slug: "apple", name: "Apple", img: fruity },
+            ]}
+          />
         </div>
       </section>
 
@@ -105,24 +112,3 @@ function Products() {
   );
 }
 
-function VariantGallery({ items }: { items: { slug: string; name: string; img: string }[] }) {
-  return (
-    <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 reveal">
-      {items.map((it) => (
-        <Link
-          key={it.slug}
-          to="/products/$slug"
-          params={{ slug: it.slug }}
-          className="group relative aspect-[4/5] rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all hover:-translate-y-1"
-        >
-          <img src={it.img} alt={it.name} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
-          <div className="absolute bottom-0 inset-x-0 p-5">
-            <div className="font-serif text-2xl text-white">{it.name}</div>
-            <div className="text-xs text-white/70 mt-1 flex items-center gap-1">Coated vs uncoated <ArrowRight className="w-3 h-3" /></div>
-          </div>
-        </Link>
-      ))}
-    </div>
-  );
-}
