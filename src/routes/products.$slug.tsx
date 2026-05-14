@@ -1,8 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import veggie from "@/assets/veggie-vegetables.jpg";
 import fruity from "@/assets/fruity-fruits.jpg";
 import bloomy from "@/assets/bloomy-flowers.jpg";
+import { BeforeAfter } from "@/components/BeforeAfter";
 
 type Variant = {
   slug: string;
@@ -59,6 +60,9 @@ export const Route = createFileRoute("/products/$slug")({
 function VariantPage() {
   const { slug } = Route.useParams();
   const v = VARIANTS[slug]!;
+  const uDays = parseInt(v.shelfLifeUncoated, 10) || 7;
+  const cDays = parseInt(v.shelfLifeCoated, 10) || 21;
+  const gain = Math.round(((cDays - uDays) / uDays) * 100);
   return (
     <>
       <section className="bg-forest text-white pt-40 pb-20">
@@ -69,64 +73,42 @@ function VariantPage() {
           <span className="label-eyebrow text-white/60 mt-8 block">{v.line} · Variety</span>
           <h1 className="font-serif text-6xl md:text-8xl lg:text-[8.5rem] mt-3 leading-[0.95]">{v.name}</h1>
           <p className="mt-6 text-lg md:text-xl text-white/70 max-w-2xl">{v.notes}</p>
+          <div className="mt-12 grid grid-cols-3 gap-8 max-w-2xl">
+            <div><div className="font-serif text-4xl md:text-5xl">{uDays}d</div><div className="text-white/55 text-sm mt-1">Uncoated</div></div>
+            <div><div className="font-serif text-4xl md:text-5xl text-teal">{cDays}d</div><div className="text-white/55 text-sm mt-1">Coated</div></div>
+            <div><div className="font-serif text-4xl md:text-5xl">+{gain}%</div><div className="text-white/55 text-sm mt-1">Shelf-life gain</div></div>
+          </div>
         </div>
       </section>
 
-      {/* COATED VS UNCOATED */}
+      {/* DRAGGABLE COMPARISON */}
       <section className="bg-cream py-20 md:py-28">
         <div className="container-x">
           <div className="max-w-3xl">
-            <span className="label-eyebrow text-teal">Side-by-side · Day 14</span>
+            <span className="label-eyebrow text-teal">Drag to compare</span>
             <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl mt-4 leading-[1.02]">Coated vs uncoated.</h2>
-            <p className="mt-5 text-lg text-ink/70">Same harvest. Same ambient storage. One difference — the TAEC coating.</p>
+            <p className="mt-5 text-lg text-ink/70">Same harvest. Same ambient storage. Drag the handle to reveal the difference TAEC makes.</p>
           </div>
+          <div className="mt-12 reveal">
+            <BeforeAfter src={v.img} alt={`${v.name} coated vs uncoated comparison`} />
+            <div className="mt-4 text-center text-sm text-ink/50 font-mono tracking-wider">← drag to reveal →</div>
+          </div>
+        </div>
+      </section>
 
-          <div className="mt-14 grid md:grid-cols-2 gap-6 md:gap-8">
-            {/* Uncoated */}
-            <div className="reveal">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-ink/5">
-                <img
-                  src={v.img}
-                  alt={`Uncoated ${v.name} after ${v.shelfLifeUncoated}`}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                  style={{ filter: "grayscale(0.55) brightness(0.78) contrast(0.92) sepia(0.25)" }}
-                />
-                <div className="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-ink/80 text-white text-xs uppercase tracking-widest">Uncoated</div>
-                <div className="absolute bottom-5 left-5 right-5 text-white">
-                  <div className="font-serif text-3xl">Day 14</div>
-                  <div className="text-sm text-white/80">Shrivel · pathogen pressure · loss of market value</div>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent pointer-events-none" />
-              </div>
-              <div className="mt-5 flex items-baseline gap-3">
-                <div className="font-serif text-4xl text-ink/80">{v.shelfLifeUncoated}</div>
-                <div className="text-sm text-ink/50">average shelf life</div>
-              </div>
-            </div>
-
-            {/* Coated */}
-            <div className="reveal">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-ink/5">
-                <img
-                  src={v.img}
-                  alt={`Coated ${v.name} after ${v.shelfLifeCoated}`}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                  style={{ filter: "saturate(1.15) brightness(1.05) contrast(1.05)" }}
-                />
-                <div className="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-teal text-white text-xs uppercase tracking-widest inline-flex items-center gap-1.5"><Check className="w-3 h-3" /> Coated</div>
-                <div className="absolute bottom-5 left-5 right-5 text-white">
-                  <div className="font-serif text-3xl">Day 14</div>
-                  <div className="text-sm text-white/80">Firm · vibrant · market-ready</div>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent pointer-events-none" />
-              </div>
-              <div className="mt-5 flex items-baseline gap-3">
-                <div className="font-serif text-4xl text-teal">{v.shelfLifeCoated}</div>
-                <div className="text-sm text-ink/50">with TAEC coating</div>
-              </div>
-            </div>
+      {/* TIMELINE */}
+      <section className="bg-cream pb-20">
+        <div className="container-x">
+          <span className="label-eyebrow text-teal">Shelf-life timeline</span>
+          <h2 className="font-serif text-4xl md:text-5xl mt-3 leading-tight max-w-2xl">Week by week, post-harvest.</h2>
+          <div className="mt-12 space-y-6">
+            <TimelineRow label="Uncoated" days={uDays} max={Math.max(uDays, cDays)} tone="ink" />
+            <TimelineRow label="Coated" days={cDays} max={Math.max(uDays, cDays)} tone="teal" />
+          </div>
+          <div className="mt-6 flex justify-between text-xs text-ink/40 font-mono tracking-wider max-w-full">
+            <span>Day 0</span>
+            <span>Day {Math.round(Math.max(uDays, cDays) / 2)}</span>
+            <span>Day {Math.max(uDays, cDays)}</span>
           </div>
         </div>
       </section>
@@ -163,5 +145,22 @@ function VariantPage() {
         </div>
       </section>
     </>
+  );
+}
+
+function TimelineRow({ label, days, max, tone }: { label: string; days: number; max: number; tone: "ink" | "teal" }) {
+  const pct = (days / max) * 100;
+  const fill = tone === "teal" ? "bg-teal" : "bg-ink/70";
+  const text = tone === "teal" ? "text-teal" : "text-ink";
+  return (
+    <div>
+      <div className="flex items-baseline justify-between mb-2">
+        <span className={`label-eyebrow ${text}`}>{label}</span>
+        <span className={`font-serif text-2xl ${text}`}>{days} days</span>
+      </div>
+      <div className="h-3 rounded-full bg-ink/10 overflow-hidden">
+        <div className={`h-full ${fill} rounded-full transition-all duration-1000`} style={{ width: `${pct}%` }} />
+      </div>
+    </div>
   );
 }
