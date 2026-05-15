@@ -115,7 +115,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                 <span className="w-8 h-8 rounded-full bg-white text-forest grid place-items-center font-serif font-bold">e</span>
                 <span className="font-serif text-xl text-white">everipe</span>
               </div>
-              <p className="font-serif italic text-2xl text-white/90 leading-snug max-w-sm">
+              <p className="font-serif text-2xl text-white/90 leading-snug max-w-sm">
                 Where every harvest counts.
               </p>
             </div>
