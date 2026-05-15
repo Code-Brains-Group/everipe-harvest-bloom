@@ -25,35 +25,6 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
   useEffect(() => { setOpen(false); }, [path]);
 
-  // Reveal-on-scroll
-  useEffect(() => {
-    document.documentElement.classList.add("js");
-    let raf = 0;
-    const io = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("in");
-            io.unobserve(e.target);
-          }
-        }),
-      { threshold: 0.05, rootMargin: "0px 0px -5% 0px" }
-    );
-    const bind = () => {
-      document.querySelectorAll(".reveal:not(.in)").forEach((el) => io.observe(el));
-    };
-    raf = requestAnimationFrame(bind);
-    // Safety net: ensure all reveal elements become visible after 2s
-    const safety = window.setTimeout(() => {
-      document.querySelectorAll(".reveal:not(.in)").forEach((el) => el.classList.add("in"));
-    }, 2000);
-    return () => {
-      cancelAnimationFrame(raf);
-      clearTimeout(safety);
-      io.disconnect();
-    };
-  }, [path]);
-
   return (
     <div className="min-h-screen bg-cream text-ink">
       <header
@@ -115,7 +86,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                 <span className="w-8 h-8 rounded-full bg-white text-forest grid place-items-center font-serif font-bold">e</span>
                 <span className="font-serif text-xl text-white">everipe</span>
               </div>
-              <p className="font-serif italic text-2xl text-white/90 leading-snug max-w-sm">
+              <p className="font-serif text-2xl text-white/90 leading-snug max-w-sm">
                 Where every harvest counts.
               </p>
             </div>

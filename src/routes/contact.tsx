@@ -24,7 +24,7 @@ function Contact() {
           <div className="lg:col-span-5">
             <SectionLabel>Get in Touch</SectionLabel>
             <h1 className="font-serif text-5xl md:text-6xl leading-[1.05]">
-              Let's keep more harvests <em className="italic-accent">alive.</em>
+              Let's keep more harvests <span className="text-teal">alive.</span>
             </h1>
             <p className="mt-6 text-lg text-ink/70 leading-relaxed">
               Whether you grow, ship, sell, or invest in fresh produce — we'd love to talk about how TAEC can extend your shelf life and reduce waste.

@@ -38,7 +38,7 @@ function Home() {
           <div className="max-w-4xl">
             <span className="label-eyebrow text-white/70">Climate-tech · Postharvest protection</span>
             <h1 className="font-serif font-bold mt-5 text-5xl md:text-7xl lg:text-8xl leading-[0.95]">
-              Stronger Harvests,<br />Longer <em className="not-italic font-serif italic text-white/90">Freshness,</em><br /> and <span className="italic">Zero Waste.</span>
+              Stronger Harvests,<br />Longer <span className="font-serif text-white/90">Freshness,</span><br /> and Zero Waste.
             </h1>
             <p className="mt-7 text-lg md:text-xl text-white/85 max-w-2xl leading-relaxed">
               The world's first thermally adaptive coating that turns any logistics chain into a zero-energy cold chain.
@@ -57,13 +57,13 @@ function Home() {
           <div className="reveal">
             <SectionLabel>Our Mission</SectionLabel>
             <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-              Reduce cold-chain losses by <em className="italic-accent">40%</em> across the world's most vulnerable food systems.
+              Reduce cold-chain losses by <span className="text-teal">40%</span> across the world's most vulnerable food systems.
             </h2>
           </div>
           <div className="reveal md:pt-12">
             <SectionLabel>Our Vision</SectionLabel>
             <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-              A world where food loss is no longer <em className="italic-accent">inevitable.</em>
+              A world where food loss is no longer <span className="text-teal">inevitable.</span>
             </h2>
           </div>
         </div>
@@ -73,7 +73,7 @@ function Home() {
       <section className="bg-teal text-white py-28 md:py-40">
         <div className="container-x">
           <h2 className="font-serif text-4xl md:text-6xl leading-tight max-w-5xl reveal">
-            By 2050, we must feed <em className="italic">10 billion</em> people. The cold chain is failing. <span className="text-white/70">We built the solution.</span>
+            By 2050, we must feed 10 billion people. The cold chain is failing. <span className="text-white/70">We built the solution.</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-6 mt-16">
             {[
@@ -105,7 +105,7 @@ function Home() {
         <div className="container-x">
           <div className="max-w-2xl mb-16 reveal">
             <SectionLabel>Three product lines</SectionLabel>
-            <h2 className="font-serif text-4xl md:text-6xl">One coating. <em className="italic-accent">Variety-specific</em> protection.</h2>
+            <h2 className="font-serif text-4xl md:text-6xl">One coating. <span className="text-teal">Variety-specific</span> protection.</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -140,7 +140,7 @@ function Home() {
         <div className="absolute inset-0 bg-ink/30" />
         <div className="relative bg-cream max-w-3xl mx-6 px-10 py-14 md:px-16 md:py-20 rounded-2xl text-center reveal shadow-2xl">
           <p className="font-serif text-3xl md:text-5xl leading-tight">
-            We're building a world where <em className="italic-accent">every harvest counts.</em>
+            We're building a world where <span className="text-teal">every harvest counts.</span>
           </p>
           <Link to="/our-story" className="inline-flex items-center gap-2 mt-8 text-teal font-medium">
             Our Story <ArrowRight className="w-4 h-4" />
@@ -180,7 +180,7 @@ function WhoItsFor() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 reveal">
           <div>
             <SectionLabel>Built for</SectionLabel>
-            <h2 className="font-serif text-4xl md:text-5xl">Whoever keeps food <em className="italic-accent">moving.</em></h2>
+            <h2 className="font-serif text-4xl md:text-5xl">Whoever keeps food <span className="text-teal">moving.</span></h2>
           </div>
           <div className="flex gap-1 p-1 bg-cream rounded-full self-start">
             {tabs.map((tab, i) => (

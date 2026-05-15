@@ -38,7 +38,7 @@ function Farmers() {
         <div className="container-x relative pb-24 text-white max-w-4xl">
           <span className="label-eyebrow text-white/70">For Farmers</span>
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl mt-4 leading-[0.98]">
-            More yield. <em className="italic">Less income.</em><br />Something was wrong.
+            More yield. Less income.<br />Something was wrong.
           </h1>
         </div>
       </section>
@@ -60,7 +60,7 @@ function Farmers() {
         <div className="container-x reveal">
           <span className="label-eyebrow text-white/60">Everipe for Smallholders</span>
           <h2 className="font-serif text-4xl md:text-6xl mt-5 leading-tight max-w-3xl mx-auto">
-            Reduce losses. Grow income. <em className="italic">Reach premium markets.</em>
+            Reduce losses. Grow income. Reach premium markets.
           </h2>
           <p className="mt-6 text-white/75 text-lg">No expensive equipment needed.</p>
         </div>
@@ -90,7 +90,7 @@ function Farmers() {
       <section className="py-28 md:py-36 bg-white">
         <div className="container-x">
           <SectionLabel>Getting started</SectionLabel>
-          <h2 className="font-serif text-4xl md:text-5xl mb-16 reveal">Three steps. <em className="italic-accent">That's it.</em></h2>
+          <h2 className="font-serif text-4xl md:text-5xl mb-16 reveal">Three steps. <span className="text-teal">That's it.</span></h2>
           <div className="grid md:grid-cols-3 gap-12">
             {[["01", "Contact Us", "Reach out via WhatsApp, phone or your local agent."],
               ["02", "Get Training", "Free 30-minute application training, on-farm or virtual."],
@@ -143,7 +143,7 @@ function Farmers() {
             ["I tripled my income in one season. The middlemen finally had to negotiate.", "Joseph Kiprop · Mango, Machakos"],
           ].map(([q, a]) => (
             <div key={a} className="bg-white/5 p-10 rounded-2xl reveal">
-              <p className="font-serif text-2xl italic leading-snug">"{q}"</p>
+              <p className="font-serif text-2xl leading-snug">"{q}"</p>
               <p className="mt-6 text-sm text-white/55">{a}</p>
             </div>
           ))}
