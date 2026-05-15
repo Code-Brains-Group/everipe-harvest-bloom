@@ -1,4 +1,4 @@
-import { Outlet, createFileRoute, Link } from "@tanstack/react-router";
+import { Outlet, createFileRoute, Link, useRouterState } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import bloomy from "@/assets/bloomy-flowers.jpg";
 import veggie from "@/assets/veggie-vegetables.jpg";
@@ -16,11 +16,8 @@ export const Route = createFileRoute("/products")({
 });
 
 function ProductsLayout() {
-  return <Outlet />;
-}
-
-export function ProductsIndex() {
-  return <Products />;
+  const path = useRouterState({ select: (state) => state.location.pathname });
+  return path === "/products" || path === "/products/" ? <Products /> : <Outlet />;
 }
 
 function Products() {
