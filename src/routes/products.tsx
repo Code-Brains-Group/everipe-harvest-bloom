@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Outlet, createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import bloomy from "@/assets/bloomy-flowers.jpg";
 import veggie from "@/assets/veggie-vegetables.jpg";
@@ -12,8 +12,16 @@ export const Route = createFileRoute("/products")({
       { name: "description", content: "Three product lines. Variety-specific protection across flowers, vegetables and fruits." },
     ],
   }),
-  component: Products,
+  component: ProductsLayout,
 });
+
+function ProductsLayout() {
+  return <Outlet />;
+}
+
+export function ProductsIndex() {
+  return <Products />;
+}
 
 function Products() {
   return (
