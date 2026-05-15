@@ -40,7 +40,7 @@ function Tech() {
         <div className="container-x relative pb-24 text-white max-w-4xl">
           <span className="label-eyebrow text-white/70">The Technology</span>
           <h1 className="font-serif font-bold text-5xl md:text-7xl mt-4 leading-[0.98]">
-            TAEC — protection that works <em className="italic">where infrastructure doesn't.</em>
+            TAEC — protection that works where infrastructure doesn't.
           </h1>
           <p className="mt-6 text-lg md:text-xl text-white/85 max-w-2xl">
             An antimicrobial, plant-based spray. No cold chain. No equipment. Just spray and store.
@@ -53,7 +53,7 @@ function Tech() {
         <div className="container-x">
           <div className="max-w-3xl mb-16 reveal">
             <SectionLabel>Properties</SectionLabel>
-            <h2 className="font-serif text-4xl md:text-6xl">Six properties. <em className="italic-accent">One simple spray.</em></h2>
+            <h2 className="font-serif text-4xl md:text-6xl">Six properties. <span className="text-teal">One simple spray.</span></h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {PROPS.map(({ icon: Icon, stat, t, d }, i) => (
@@ -73,7 +73,7 @@ function Tech() {
         <div className="container-x">
           <div className="max-w-3xl mb-16 reveal">
             <SectionLabel>Application</SectionLabel>
-            <h2 className="font-serif text-4xl md:text-5xl">Five steps. <em className="italic-accent">Ten minutes.</em></h2>
+            <h2 className="font-serif text-4xl md:text-5xl">Five steps. <span className="text-teal">Ten minutes.</span></h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-16">
             {STEPS.map(([n, l]) => (
@@ -110,7 +110,7 @@ function Tech() {
       {/* CTA */}
       <section className="py-32 bg-veggie text-center">
         <div className="container-x">
-          <h2 className="font-serif text-4xl md:text-6xl reveal">Read the research behind <em className="italic-accent">TAEC.</em></h2>
+          <h2 className="font-serif text-4xl md:text-6xl reveal">Read the research behind <span className="text-teal">TAEC.</span></h2>
           <Link to="/our-story" className="btn-primary mt-10">Access Documentation <ArrowRight className="w-4 h-4" /></Link>
         </div>
       </section>
