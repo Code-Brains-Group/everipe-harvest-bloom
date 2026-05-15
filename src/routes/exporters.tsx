@@ -34,7 +34,7 @@ function Exporters() {
         <div className="container-x relative pb-24 text-white max-w-4xl">
           <span className="label-eyebrow text-white/70">For Exporters</span>
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl mt-4 leading-[0.98]">
-            Cold chains break. Transit gets longer. <em className="italic">Quality can't wait.</em>
+            Cold chains break. Transit gets longer. Quality can't wait.
           </h1>
         </div>
       </section>
@@ -105,7 +105,7 @@ function Exporters() {
             ["Our buyers in Europe stopped rejecting shipments. The savings paid for the program in one quarter.", "Carlos Mendoza · Avocado Exporter, Latin America"],
           ].map(([q, a]) => (
             <div key={a} className="reveal">
-              <p className="font-serif italic text-3xl leading-snug">"{q}"</p>
+              <p className="font-serif text-3xl leading-snug">"{q}"</p>
               <p className="mt-6 text-sm text-ink/55 label-eyebrow">{a}</p>
             </div>
           ))}
