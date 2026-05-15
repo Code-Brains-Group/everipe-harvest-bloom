@@ -25,35 +25,6 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
   useEffect(() => { setOpen(false); }, [path]);
 
-  // Reveal-on-scroll
-  useEffect(() => {
-    document.documentElement.classList.add("js");
-    let raf = 0;
-    const io = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("in");
-            io.unobserve(e.target);
-          }
-        }),
-      { threshold: 0.05, rootMargin: "0px 0px -5% 0px" }
-    );
-    const bind = () => {
-      document.querySelectorAll(".reveal:not(.in)").forEach((el) => io.observe(el));
-    };
-    raf = requestAnimationFrame(bind);
-    // Safety net: ensure all reveal elements become visible after 2s
-    const safety = window.setTimeout(() => {
-      document.querySelectorAll(".reveal:not(.in)").forEach((el) => el.classList.add("in"));
-    }, 2000);
-    return () => {
-      cancelAnimationFrame(raf);
-      clearTimeout(safety);
-      io.disconnect();
-    };
-  }, [path]);
-
   return (
     <div className="min-h-screen bg-cream text-ink">
       <header
