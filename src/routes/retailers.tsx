@@ -24,7 +24,7 @@ function Retailers() {
         <div className="container-x relative pb-24 text-white max-w-4xl">
           <span className="label-eyebrow text-white/70">For Retailers</span>
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl mt-4 leading-[0.98]">
-            Reduce shrinkage. <em className="italic">Delight customers.</em> Without changing a thing.
+            Reduce shrinkage. Delight customers. Without changing a thing.
           </h1>
         </div>
       </section>
@@ -92,7 +92,7 @@ function Retailers() {
             ["Our customers notice. The avocados stay green to the last on shelf.", "David Okello · Store Manager, Nairobi"],
           ].map(([q, a]) => (
             <div key={a} className="bg-white/5 p-10 rounded-2xl reveal">
-              <p className="font-serif text-2xl italic">"{q}"</p>
+              <p className="font-serif text-2xl">"{q}"</p>
               <p className="mt-6 text-sm text-white/55">{a}</p>
             </div>
           ))}
