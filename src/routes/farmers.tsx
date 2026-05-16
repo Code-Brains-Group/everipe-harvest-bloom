@@ -177,10 +177,29 @@ function Farmers() {
       </section>
 
       {/* GETTING STARTED */}
+      <section className="py-28 md:py-36 bg-white">
+        <div className="container-x">
+          <SectionLabel>Getting started</SectionLabel>
+          <h2 className="font-serif text-4xl md:text-5xl mb-16 reveal">Three steps. <span className="text-[#17726d]">That is it.</span></h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            {[["01", "Contact Us", "Reach out via WhatsApp, phone or your local agent."],
+              ["02", "Get Training", "Free 30-minute application training, on-farm or virtual."],
+              ["03", "Start Spraying", "Apply on harvest day. Results visible within 7 days."]].map(([n, t, d]) => (
+              <div key={n} className="reveal">
+                <div className="font-serif text-7xl text-[#17726d]/80">{n}</div>
+                <div className="font-serif text-2xl mt-3">{t}</div>
+                <p className="mt-2 text-[#17726d]/65">{d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
       <section className="py-28 bg-white">
         <div className="container-x max-w-3xl">
-          <SectionLabel>Getting started</SectionLabel>
-          <h2 className="font-serif text-4xl md:text-5xl mb-10">Three steps. That is it.</h2>
+          <SectionLabel>FAQ</SectionLabel>
+          <h2 className="font-serif text-4xl md:text-5xl mb-10">Common questions.</h2>
           <div className="divide-y divide-[#17726d] border-y border-[#17726d]">
             {FAQS.map(([q, a], i) => (
               <button key={q} onClick={() => setOpen(open === i ? null : i)} className="w-full text-left py-6 flex items-start justify-between gap-6">
