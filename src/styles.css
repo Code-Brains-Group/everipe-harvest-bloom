@@ -33,28 +33,29 @@
 
 :root {
   --radius: 0.5rem;
-  --cream: oklch(1 0 0);
+  --white: #ffffff;
+  --cream: #ffffff;
   --teal: #17726d;
-  --teal-deep: #0f5450;
-  --forest: #0f5450;
-  --ink: oklch(0.18 0.01 250);
-  --bloomy: oklch(0.92 0.025 305);
-  --bloomy-accent: oklch(0.5 0.12 300);
-  --veggie: oklch(0.95 0.02 155);
-  --veggie-accent: oklch(0.46 0.075 155);
-  --fruity: oklch(0.95 0.025 60);
-  --fruity-accent: oklch(0.6 0.16 45);
+  --teal-deep: #17726d;
+  --forest: #17726d;
+  --ink: #17726d;
+  --bloomy: #ffffff;
+  --bloomy-accent: #17726d;
+  --veggie: #ffffff;
+  --veggie-accent: #17726d;
+  --fruity: #ffffff;
+  --fruity-accent: #17726d;
 
-  --background: var(--cream);
-  --foreground: var(--ink);
-  --card: oklch(1 0 0);
-  --card-foreground: var(--ink);
-  --primary: var(--teal);
-  --primary-foreground: oklch(0.99 0 0);
-  --muted: oklch(0.92 0.014 85);
-  --muted-foreground: oklch(0.45 0.01 250);
-  --border: oklch(0.88 0.015 85);
-  --ring: var(--teal);
+  --background: #ffffff;
+  --foreground: #17726d;
+  --card: #ffffff;
+  --card-foreground: #17726d;
+  --primary: #17726d;
+  --primary-foreground: #ffffff;
+  --muted: #ffffff;
+  --muted-foreground: #17726d;
+  --border: #17726d;
+  --ring: #17726d;
 }
 
 @layer base {
