@@ -21,14 +21,12 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-cream text-ink">
       <header
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-cream/95 backdrop-blur border-b border-border" : "bg-transparent"
-        }`}
+        className="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-cream/95 backdrop-blur border-b border-border"
       >
         <div className="container-x flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-2 group">
-            <span className={`w-8 h-8 rounded-full grid place-items-center font-serif text-lg font-bold ${scrolled ? "bg-teal text-white" : "bg-white/90 text-teal"}`}>e</span>
-            <span className={`font-serif text-xl font-semibold tracking-tight ${scrolled ? "text-teal" : "text-white"}`}>everipe</span>
+            <span className="w-8 h-8 rounded-full grid place-items-center font-serif text-lg font-bold bg-teal text-white">e</span>
+            <span className="font-serif text-xl font-semibold tracking-tight text-teal">everipe</span>
           </Link>
           <nav className="hidden lg:flex items-center gap-8">
             {NAV.map((n) => (
@@ -36,20 +34,20 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                 key={n.to}
                 to={n.to}
                 activeOptions={{ exact: n.to === "/" }}
-                className={`text-sm font-medium transition-colors ${scrolled ? "text-ink/70 hover:text-teal" : "text-white/85 hover:text-white"}`}
-                activeProps={{ className: scrolled ? "text-teal" : "text-white" }}
+                className="text-sm font-medium transition-colors text-ink/70 hover:text-teal"
+                activeProps={{ className: "text-teal" }}
               >
                 {n.label}
               </Link>
             ))}
           </nav>
           <div className="hidden md:flex items-center gap-3">
-            <Link to="/contact" className={`text-sm px-4 py-2 rounded-full border ${scrolled ? "border-ink/20 text-ink hover:bg-ink hover:text-cream" : "border-white/40 text-white hover:bg-white hover:text-teal"}`}>
+            <Link to="/contact" className="text-sm px-4 py-2 rounded-full border border-ink/20 text-ink hover:bg-ink hover:text-cream">
               Partner With Us
             </Link>
             <Link to="/contact" className="btn-primary text-sm !py-2.5">Get in Touch</Link>
           </div>
-          <button onClick={() => setOpen(true)} className={`lg:hidden p-2 ${scrolled ? "text-ink" : "text-white"}`} aria-label="Menu">
+          <button onClick={() => setOpen(true)} className="lg:hidden p-2 text-ink" aria-label="Menu">
             <Menu className="w-6 h-6" />
           </button>
         </div>
