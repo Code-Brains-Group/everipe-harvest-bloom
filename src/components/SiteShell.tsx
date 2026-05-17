@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const NAV = [
+  { to: "/", label: "Home" },
   { to: "/technology", label: "Technology" },
   { to: "/products", label: "Products" },
   { to: "/farmers", label: "Farmers" },
