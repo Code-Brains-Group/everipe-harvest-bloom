@@ -43,6 +43,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               <Link
                 key={n.to}
                 to={n.to}
+                activeOptions={{ exact: n.to === "/" }}
                 className={`text-sm font-medium transition-colors ${scrolled ? "text-ink/70 hover:text-teal" : "text-white/85 hover:text-white"}`}
                 activeProps={{ className: scrolled ? "text-teal" : "text-white" }}
               >
