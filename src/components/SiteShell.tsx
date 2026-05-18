@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const NAV = [
+  { to: "/", label: "Home" },
   { to: "/technology", label: "Technology" },
   { to: "/products", label: "Products" },
   { to: "/farmers", label: "Farmers" },
@@ -12,79 +13,41 @@ const NAV = [
 ] as const;
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const path = useRouterState({ select: (s) => s.location.pathname });
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   useEffect(() => { setOpen(false); }, [path]);
-
-  // Reveal-on-scroll
-  useEffect(() => {
-    document.documentElement.classList.add("js");
-    let raf = 0;
-    const io = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("in");
-            io.unobserve(e.target);
-          }
-        }),
-      { threshold: 0.05, rootMargin: "0px 0px -5% 0px" }
-    );
-    const bind = () => {
-      document.querySelectorAll(".reveal:not(.in)").forEach((el) => io.observe(el));
-    };
-    raf = requestAnimationFrame(bind);
-    // Safety net: ensure all reveal elements become visible after 2s
-    const safety = window.setTimeout(() => {
-      document.querySelectorAll(".reveal:not(.in)").forEach((el) => el.classList.add("in"));
-    }, 2000);
-    return () => {
-      cancelAnimationFrame(raf);
-      clearTimeout(safety);
-      io.disconnect();
-    };
-  }, [path]);
 
   return (
     <div className="min-h-screen bg-cream text-ink">
       <header
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-cream/95 backdrop-blur border-b border-border" : "bg-transparent"
-        }`}
+        className="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-cream/95 backdrop-blur border-b border-border"
       >
         <div className="container-x flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-2 group">
-            <span className={`w-8 h-8 rounded-full grid place-items-center font-serif text-lg font-bold ${scrolled ? "bg-teal text-white" : "bg-white/90 text-teal"}`}>e</span>
-            <span className={`font-serif text-xl font-semibold tracking-tight ${scrolled ? "text-teal" : "text-white"}`}>everipe</span>
+            <span className="w-8 h-8 rounded-full grid place-items-center font-serif text-lg font-bold bg-teal text-white">e</span>
+            <span className="font-serif text-xl font-semibold tracking-tight text-teal">everipe</span>
           </Link>
           <nav className="hidden lg:flex items-center gap-8">
             {NAV.map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
-                className={`text-sm font-medium transition-colors ${scrolled ? "text-ink/70 hover:text-teal" : "text-white/85 hover:text-white"}`}
-                activeProps={{ className: scrolled ? "text-teal" : "text-white" }}
+                activeOptions={{ exact: n.to === "/" }}
+                className="text-sm font-medium transition-colors text-ink/70 hover:text-teal"
+                activeProps={{ className: "text-teal" }}
               >
                 {n.label}
               </Link>
             ))}
           </nav>
           <div className="hidden md:flex items-center gap-3">
-            <Link to="/contact" className={`text-sm px-4 py-2 rounded-full border ${scrolled ? "border-ink/20 text-ink hover:bg-ink hover:text-cream" : "border-white/40 text-white hover:bg-white hover:text-teal"}`}>
+            <Link to="/contact" className="text-sm px-4 py-2 rounded-full border border-ink/20 text-ink hover:bg-ink hover:text-cream">
               Partner With Us
             </Link>
             <Link to="/contact" className="btn-primary text-sm !py-2.5">Get in Touch</Link>
           </div>
-          <button onClick={() => setOpen(true)} className={`lg:hidden p-2 ${scrolled ? "text-ink" : "text-white"}`} aria-label="Menu">
+          <button onClick={() => setOpen(true)} className="lg:hidden p-2 text-ink" aria-label="Menu">
             <Menu className="w-6 h-6" />
           </button>
         </div>
@@ -115,7 +78,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                 <span className="w-8 h-8 rounded-full bg-white text-forest grid place-items-center font-serif font-bold">e</span>
                 <span className="font-serif text-xl text-white">everipe</span>
               </div>
-              <p className="font-serif italic text-2xl text-white/90 leading-snug max-w-sm">
+              <p className="font-serif text-2xl text-white/90 leading-snug max-w-sm">
                 Where every harvest counts.
               </p>
             </div>
