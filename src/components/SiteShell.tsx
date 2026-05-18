@@ -2,6 +2,8 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
+import everipeLogo from "@/assets/logo/everipeLogo.png";
+
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/technology", label: "Technology" },
@@ -25,8 +27,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       >
         <div className="container-x flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-2 group">
-            <span className="w-8 h-8 rounded-full grid place-items-center font-serif text-lg font-bold bg-teal text-white">e</span>
-            <span className="font-serif text-xl font-semibold tracking-tight text-teal">everipe</span>
+            <img src={everipeLogo} alt="Everipe Logo" className="h-8 w-auto object-contain" />
           </Link>
           <nav className="hidden lg:flex items-center gap-8">
             {NAV.map((n) => (
@@ -56,7 +57,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       {open && (
         <div className="fixed inset-0 z-[60] bg-teal text-white animate-fade-in">
           <div className="container-x flex items-center justify-between h-16 md:h-20">
-            <span className="font-serif text-xl font-semibold">everipe</span>
+            <img src={everipeLogo} alt="Everipe Logo" className="h-8 w-auto object-contain brightness-0 invert" />
             <button onClick={() => setOpen(false)} className="p-2" aria-label="Close"><X className="w-6 h-6" /></button>
           </div>
           <nav className="flex flex-col items-center gap-7 mt-16">
@@ -75,8 +76,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           <div className="grid md:grid-cols-5 gap-12">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-5">
-                <span className="w-8 h-8 rounded-full bg-white text-forest grid place-items-center font-serif font-bold">e</span>
-                <span className="font-serif text-xl text-white">everipe</span>
+                <img src={everipeLogo} alt="Everipe Logo" className="h-10 w-auto object-contain brightness-0 invert" />
               </div>
               <p className="font-serif text-2xl text-white/90 leading-snug max-w-sm">
                 Where every harvest counts.

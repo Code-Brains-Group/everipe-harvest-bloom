@@ -10,6 +10,7 @@ import {
 
 import appCss from "../styles.css?url";
 import { SiteShell } from "@/components/SiteShell";
+import faviconUrl from "@/assets/logo/everipeLogo.png";
 
 function NotFoundComponent() {
   return (
@@ -87,6 +88,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea37b242-5dd1-4251-84f3-0a9d08ada2fc" },
     ],
     links: [
+      { rel: "icon", type: "image/png", href: faviconUrl },
       {
         rel: "stylesheet",
         href: appCss,
