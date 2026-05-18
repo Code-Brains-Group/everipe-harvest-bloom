@@ -27,7 +27,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       >
         <div className="container-x flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-2 group">
-            <img src={everipeLogo} alt="Everipe Logo" className="h-8 w-auto object-contain" />
+            <img src={everipeLogo} alt="Everipe Logo" className="h-12 w-auto object-contain" />
           </Link>
           <nav className="hidden lg:flex items-center gap-8">
             {NAV.map((n) => (
@@ -57,7 +57,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       {open && (
         <div className="fixed inset-0 z-[60] bg-teal text-white animate-fade-in">
           <div className="container-x flex items-center justify-between h-16 md:h-20">
-            <img src={everipeLogo} alt="Everipe Logo" className="h-8 w-auto object-contain brightness-0 invert" />
+            <img src={everipeLogo} alt="Everipe Logo" className="h-12 w-auto object-contain brightness-0 invert" />
             <button onClick={() => setOpen(false)} className="p-2" aria-label="Close"><X className="w-6 h-6" /></button>
           </div>
           <nav className="flex flex-col items-center gap-7 mt-16">
@@ -76,7 +76,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           <div className="grid md:grid-cols-5 gap-12">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-5">
-                <img src={everipeLogo} alt="Everipe Logo" className="h-10 w-auto object-contain brightness-0 invert" />
+                <img src={everipeLogo} alt="Everipe Logo" className="h-16 w-auto object-contain brightness-0 invert" />
               </div>
               <p className="font-serif text-2xl text-white/90 leading-snug max-w-sm">
                 Where every harvest counts.
