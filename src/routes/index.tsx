@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
-import hero from "@/assets/hero-packhouse.jpg";
+import hero from "@/assets/home-fruits-veg.png";
 import bloomy from "@/assets/bloomy-flowers.jpg";
 import veggie from "@/assets/veggie-vegetables.jpg";
 import fruity from "@/assets/fruity-fruits.jpg";
@@ -9,12 +9,15 @@ import farmer from "@/assets/farmer-portrait.jpg";
 import port from "@/assets/exporter-port.jpg";
 import retail from "@/assets/retailer-produce.jpg";
 import aerial from "@/assets/story-aerial.jpg";
+import avocadoComparison from "@/assets/avocado-comparison.png";
+import crisisDecay from "@/assets/crisis-decay.png";
+import solutionShield from "@/assets/solution-shield.png";
 import { Stat, SectionLabel } from "@/components/Bits";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Everipe — Stronger Harvests, Longer Freshness, Zero Waste" },
+      { title: "Everipe — Eliminating Food Loss with Zero-Energy Cold Chains" },
       { name: "description", content: "TAEC: a thermally adaptive, plant-based spray that turns any logistics chain into a zero-energy cold chain." },
     ],
   }),
@@ -28,21 +31,21 @@ function Home() {
       <section className="relative min-h-screen flex items-end overflow-hidden">
         <img
           src={hero}
-          alt="Workers applying TAEC spray to fresh produce in an East African packhouse"
+          alt="Vibrant array of fresh fruits and vegetables protected by Everipe TAEC coating"
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-ink/40" />
         <div className="relative container-x pb-20 md:pb-28 pt-32 text-white">
           <div className="max-w-4xl">
             <span className="label-eyebrow text-white/70">Climate-tech · Postharvest protection</span>
-            <h1 className="font-serif font-bold mt-5 text-5xl md:text-7xl lg:text-8xl leading-[0.95]">
-              Stronger Harvests,<br />Longer <span className="font-serif text-white/90">Freshness,</span><br /> and Zero Waste.
+            <h1 className="font-serif font-bold mt-5 text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight">
+              Eliminating food loss through the world’s first thermally adaptive coating that turns standard logistics into smart, zero-energy cold chains.
             </h1>
-            <p className="mt-7 text-lg md:text-xl text-white/85 max-w-2xl leading-relaxed">
-              The world's first thermally adaptive coating that turns any logistics chain into a zero-energy cold chain.
-            </p>
+            {/* <p className="mt-7 text-lg md:text-xl text-white/85 max-w-2xl leading-relaxed">
+              Our 100% plant-based, edible coating adapts to ambient temperatures, protecting fresh produce without standard refrigeration—saving harvests, increasing farmer income, and reducing emissions.
+            </p> */}
             <div className="mt-9 flex flex-wrap gap-3">
               <Link to="/technology" className="btn-primary">Explore the Technology <ArrowRight className="w-4 h-4" /></Link>
               <Link to="/our-story" className="btn-outline text-white">Partner With Us</Link>
@@ -56,47 +59,181 @@ function Home() {
         <div className="container-x grid md:grid-cols-2 gap-16 md:gap-24">
           <div className="reveal">
             <SectionLabel>Our Mission</SectionLabel>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-              Reduce cold-chain losses by <span className="text-teal">40%</span> across the world's most vulnerable food systems.
+            <h2 className="font-serif text-2xl md:text-3xl leading-snug">
+              To reduce cold chain-related losses by <span className="text-teal">40%</span> through innovative technology that stabilizes fresh produce in real-world supply chains.
             </h2>
           </div>
-          <div className="reveal md:pt-12">
+          <div className="reveal">
             <SectionLabel>Our Vision</SectionLabel>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-              A world where food loss is no longer <span className="text-teal">inevitable.</span>
+            <h2 className="font-serif text-2xl md:text-3xl leading-snug">
+              A world where food loss is no longer <span className="text-teal">inevitable,</span> enabled by technologies that make food systems resilient, efficient, and sustainable across every stage of the supply chain.
             </h2>
           </div>
         </div>
       </section>
 
-      {/* PROBLEM STATEMENT */}
+      {/* PROBLEM STATEMENT / THE CRISIS */}
       <section className="bg-teal text-white py-28 md:py-40">
         <div className="container-x">
-          <h2 className="font-serif text-4xl md:text-6xl leading-tight max-w-5xl reveal">
-            By 2050, we must feed 10 billion people. The cold chain is failing. <span className="text-white/70">We built the solution.</span>
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6 mt-16">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            
+            {/* Left Column: Why Now Narrative & Description */}
+            <div className="lg:col-span-5 reveal">
+              <span className="label-eyebrow text-white/70">The Post-Harvest Crisis</span>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mt-5">
+                Why Now?
+              </h2>
+              <p className="mt-6 text-lg md:text-xl text-white/90 leading-relaxed font-serif">
+                Population growth, climate change, and supply chain complexity are converging.
+              </p>
+              <p className="mt-4 text-white/70 leading-relaxed">
+                We can't solve this with infrastructure alone. We need a practical, deployable solution that works today. <strong>Everipe is that solution.</strong>
+              </p>
+            </div>
+            
+            {/* Right Column: Visual Showcase of Crisis vs. Solution */}
+            <div className="lg:col-span-7 reveal">
+              <div className="grid sm:grid-cols-2 gap-6">
+                
+                {/* Crisis Card */}
+                <div className="relative group rounded-2xl overflow-hidden bg-ink/30 border border-white/10 p-4">
+                  <div className="aspect-[4/3] rounded-xl overflow-hidden bg-black/20">
+                    <img 
+                      src={crisisDecay} 
+                      alt="Food loss crisis: Decaying lemons in transport crates" 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    />
+                  </div>
+                  <span className="absolute top-6 left-6 px-3 py-1 rounded-full text-xs font-semibold tracking-wider bg-rose-500/90 text-white uppercase backdrop-blur-sm">
+                    The Crisis
+                  </span>
+                  <div className="mt-4">
+                    <h4 className="font-serif text-lg text-white">Post-Harvest Waste</h4>
+                    <p className="text-xs text-white/60 mt-1 leading-relaxed">
+                      High ambient heat and lack of cold storage lead to severe mold proliferation and decay within hours of harvest.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Solution Card */}
+                <div className="relative group rounded-2xl overflow-hidden bg-ink/30 border border-white/10 p-4">
+                  <div className="aspect-[4/3] rounded-xl overflow-hidden bg-black/20">
+                    <img 
+                      src={solutionShield} 
+                      alt="Everipe Solution: Shielded fresh avocado and mango" 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    />
+                  </div>
+                  <span className="absolute top-6 left-6 px-3 py-1 rounded-full text-xs font-semibold tracking-wider bg-teal text-white uppercase backdrop-blur-sm">
+                    The Solution
+                  </span>
+                  <div className="mt-4">
+                    <h4 className="font-serif text-lg text-white">Dynamic Protection</h4>
+                    <p className="text-xs text-white/60 mt-1 leading-relaxed">
+                      Everipe's invisible biopolymer micro-shield adaptively regulates gas exchange, halting mold and extending freshness.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            
+          </div>
+
+          {/* Stats Cards Band (Interactive Grid at the bottom) */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
             {[
-              ["No time to negotiate", "Smallholders sell within hours of harvest before quality drops."],
-              ["No cold chain access", "Less than 10% of African produce ever sees refrigeration."],
-              ["Middlemen exploit farmers", "Urgency caps prices and erodes margins at every step."],
-            ].map(([h, p]) => (
-              <div key={h} className="bg-white text-ink p-8 rounded-2xl reveal">
-                <h3 className="font-serif text-2xl mb-3">{h}</h3>
-                <p className="text-ink/65">{p}</p>
+              {
+                value: "$1.2T",
+                label: "Lost Annually",
+                desc: "Global economic value of post-harvest food waste."
+              },
+              {
+                value: "1.3B",
+                label: "Tons Wasted",
+                desc: "Total edible food lost or thrown away every single year."
+              },
+              {
+                value: "45%",
+                label: "Produce Lost",
+                desc: "Fruits & vegetables spoiled before ever reaching consumers."
+              },
+              {
+                value: "+60%",
+                label: "More Food Needed",
+                desc: "Additional food requirement to feed 10B people by 2050."
+              }
+            ].map((stat, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                <div className="font-serif text-4xl lg:text-5xl font-bold text-white mb-2">{stat.value}</div>
+                <h3 className="text-sm font-semibold text-white/90 mb-1">{stat.label}</h3>
+                <p className="text-xs text-white/60 leading-relaxed">{stat.desc}</p>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* STATS BAND */}
-      <section className="bg-forest text-white py-24 md:py-32">
-        <div className="container-x grid grid-cols-2 md:grid-cols-4 gap-12">
-          <Stat value="60%" label="Less moisture loss" />
-          <Stat value="85%" label="Reduction in disease" />
-          <Stat value="3×" label="Longer to peak ripeness" />
-          <Stat value="40%" label="Cold chain loss reduction" />
+   
+
+      {/* OUR SOLUTION */}
+      <section className="py-28 md:py-40 bg-white">
+        <div className="container-x">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            <div className="lg:col-span-6 reveal">
+              <SectionLabel>Our Solution</SectionLabel>
+              <h2 className="font-serif text-4xl md:text-5xl leading-tight mt-5">
+                Replicating refrigeration at a <span className="text-teal">molecular level.</span>
+              </h2>
+              <p className="mt-6 text-lg text-ink/75 leading-relaxed">
+                TAEC (Thermal Adaptive Edible Coating) is a 100% plant-derived biopolymer spray that creates a microscopic, breathable shield over fresh produce. 
+              </p>
+              <p className="mt-4 text-lg text-ink/75 leading-relaxed">
+                By slowing respiration and moisture loss without blocking oxygen, it stabilizes harvested crops under hot, real-world transport conditions—no electricity or diesel required.
+              </p>
+              
+              <div className="grid sm:grid-cols-2 gap-4 mt-8">
+                {[
+                  { title: "Adaptive Shielding", desc: "Adjusts biopolymer pores dynamically to control gas exchange.", spec: "Trigger: 18°C–38°C" },
+                  { title: "Moisture Lock", desc: "Reduces water loss and weight shrinkage by up to 60%.", spec: "Efficacy: −60% H₂O Loss" },
+                  { title: "Pathogen Barrier", desc: "Blocks fungal and bacterial spores to cut decay by 85%.", spec: "Reduction: −85% Decay" },
+                  { title: "100% Edible & Safe", desc: "All-natural FDA GRAS ingredients, completely tasteless.", spec: "Class: FDA GRAS Organic" }
+                ].map((feature, i) => (
+                  <div key={i} className="border border-ink/10 rounded-2xl p-5 hover:border-teal/30 hover:bg-cream/30 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                      <h3 className="font-serif text-lg text-ink mb-1.5">{feature.title}</h3>
+                      <p className="text-ink/65 text-xs leading-relaxed mb-3">{feature.desc}</p>
+                    </div>
+                    <span className="inline-flex self-start px-2 py-0.5 rounded text-[10px] font-mono bg-teal/5 border border-teal/20 text-teal uppercase font-bold">
+                      {feature.spec}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8">
+                <Link to="/technology" className="btn-primary inline-flex">
+                  How the Tech Works <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+            
+            <div className="lg:col-span-6 reveal">
+              <div className="bg-cream/40 rounded-3xl p-6 md:p-8 border border-ink/5 flex flex-col items-center">
+                <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-white flex items-center justify-center p-4">
+                  <img src={avocadoComparison} alt="Avocado shelf life comparison: Uncoated Day 30 vs Everipe Day 40" className="max-h-full max-w-full object-contain" />
+                </div>
+                <div className="mt-6 text-center">
+                  <span className="label-eyebrow text-teal">Visual Evidence</span>
+                  <h4 className="font-serif text-xl mt-2 text-ink">40-Day Avocado Preservation Study</h4>
+                  <p className="text-xs text-ink/65 mt-2 max-w-md leading-relaxed">
+                    Uncoated avocados (left) succumb to severe moisture loss and pathogen decay by day 30. Avocados protected with Everipe TAEC (right) remain firm, fresh, and green through day 40 under ambient temperatures.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
