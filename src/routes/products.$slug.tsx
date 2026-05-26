@@ -22,8 +22,8 @@ const VARIANTS: Record<string, Variant> = {
     name: "Cut Flowers",
     line: "Bloomy",
     img: bloomy,
-    shelfLifeUncoated: "7 days",
-    shelfLifeCoated: "21 days",
+    shelfLifeUncoated: "25 days",
+    shelfLifeCoated: "45 days",
     pathogens: ["Botrytis cinerea", "Pseudomonas carotovora"],
     application: "Post-harvest dip, 30 seconds",
     notes: "Maintains high stem turgor and fresh petal color through flight cabin dehydration and hot tarmac loading delays."
@@ -33,8 +33,8 @@ const VARIANTS: Record<string, Variant> = {
     name: "Veggie Tomato",
     line: "Veggie",
     img: veggie,
-    shelfLifeUncoated: "10 days",
-    shelfLifeCoated: "24 days",
+    shelfLifeUncoated: "25 days",
+    shelfLifeCoated: "50 days",
     pathogens: ["Alternaria alternata", "Rhizopus stolonifer"],
     application: "Spray, 8 ml / kg",
     notes: "Slows ethylene-driven cell ripening and skin softening; firmness is retained under room temperatures."
@@ -44,8 +44,8 @@ const VARIANTS: Record<string, Variant> = {
     name: "Veggie Kali (Pepper)",
     line: "Veggie",
     img: veggie,
-    shelfLifeUncoated: "9 days",
-    shelfLifeCoated: "22 days",
+    shelfLifeUncoated: "26 days",
+    shelfLifeCoated: "48 days",
     pathogens: ["Colletotrichum capsici", "Botrytis cinerea"],
     application: "Spray, 7 ml / kg",
     notes: "Protective coating for hot peppers (Kali). Retains high gloss, cuts stem-end rot, and prevents wrinkling."
@@ -55,8 +55,8 @@ const VARIANTS: Record<string, Variant> = {
     name: "Veggie Cucumber",
     line: "Veggie",
     img: veggie,
-    shelfLifeUncoated: "8 days",
-    shelfLifeCoated: "20 days",
+    shelfLifeUncoated: "25 days",
+    shelfLifeCoated: "46 days",
     pathogens: ["Pythium aphanidermatum", "Penicillium"],
     application: "Spray, 6 ml / kg",
     notes: "Locks in high moisture levels and prevents shriveling and skin pitting in non-refrigerated transit."
@@ -66,8 +66,8 @@ const VARIANTS: Record<string, Variant> = {
     name: "Veggie Hoho (Capsicum)",
     line: "Veggie",
     img: veggie,
-    shelfLifeUncoated: "9 days",
-    shelfLifeCoated: "22 days",
+    shelfLifeUncoated: "26 days",
+    shelfLifeCoated: "50 days",
     pathogens: ["Colletotrichum gloeosporioides", "Alternaria"],
     application: "Spray, 8 ml / kg",
     notes: "Formulation for sweet peppers (Hoho). Maintains structural firmness and prevents surface pathogen entry."
@@ -77,8 +77,8 @@ const VARIANTS: Record<string, Variant> = {
     name: "Veggie Bean",
     line: "Veggie",
     img: veggie,
-    shelfLifeUncoated: "5 days",
-    shelfLifeCoated: "14 days",
+    shelfLifeUncoated: "25 days",
+    shelfLifeCoated: "45 days",
     pathogens: ["Sclerotinia sclerotiorum", "Rhizoctonia solani"],
     application: "Mist, 4 ml / kg",
     notes: "Preserves snap-crisp fiber texture, halts bean pod yellowing, and stops moisture decay in shipping."
@@ -88,8 +88,8 @@ const VARIANTS: Record<string, Variant> = {
     name: "Fruity Avo (Avocado)",
     line: "Fruity",
     img: fruity,
-    shelfLifeUncoated: "9 days",
-    shelfLifeCoated: "28 days",
+    shelfLifeUncoated: "28 days",
+    shelfLifeCoated: "58 days",
     pathogens: ["Colletotrichum gloeosporioides", "Lasiodiplodia theobromae"],
     application: "Dip, 12 seconds",
     notes: "Smart biopolymer shield applied only on the inedible peel. Defends against weight shrink and skin spotting."
@@ -99,8 +99,8 @@ const VARIANTS: Record<string, Variant> = {
     name: "Fruity Ananas (Pineapple)",
     line: "Fruity",
     img: fruity,
-    shelfLifeUncoated: "12 days",
-    shelfLifeCoated: "30 days",
+    shelfLifeUncoated: "30 days",
+    shelfLifeCoated: "60 days",
     pathogens: ["Thielaviopsis paradoxa", "Penicillium funiculosum"],
     application: "Crown spray, 10 ml / fruit",
     notes: "Protects the pineapple rind and crown. Prevents base rot and locks in natural Brix sugars."
@@ -110,8 +110,8 @@ const VARIANTS: Record<string, Variant> = {
     name: "Fruity Papaya (Pawpaw)",
     line: "Fruity",
     img: fruity,
-    shelfLifeUncoated: "7 days",
-    shelfLifeCoated: "21 days",
+    shelfLifeUncoated: "25 days",
+    shelfLifeCoated: "48 days",
     pathogens: ["Phytophthora palmivora", "Colletotrichum gloeosporioides"],
     application: "Spray, 8 ml / kg",
     notes: "Applied on the inedible papaya rind. Suppresses latex bleeding, skin yellowing, and surface mold."
@@ -121,8 +121,8 @@ const VARIANTS: Record<string, Variant> = {
     name: "Fruity Apples",
     line: "Fruity",
     img: fruity,
-    shelfLifeUncoated: "21 days",
-    shelfLifeCoated: "60 days",
+    shelfLifeUncoated: "26 days",
+    shelfLifeCoated: "55 days",
     pathogens: ["Penicillium expansum", "Botryosphaeria dothidea"],
     application: "Spray, 5 ml / kg",
     notes: "Creates an atmospheric shield that preserves cellular crunch and retards soft bruising at room temp."
@@ -163,7 +163,7 @@ function VariantPage() {
   const gain = Math.round(((cDays - uDays) / uDays) * 100);
   return (
     <>
-      <section className="bg-forest text-white pt-40 pb-20">
+      <section className="bg-[#17726d] text-white pt-40 pb-20">
         <div className="container-x">
           <Link to="/products" className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm transition-colors">
             <ArrowLeft className="w-4 h-4" /> All products
@@ -174,7 +174,7 @@ function VariantPage() {
           <div className="mt-12 grid grid-cols-3 gap-8 max-w-2xl">
             <div><div className="font-serif text-4xl md:text-5xl font-bold text-white/85">{uDays}d</div><div className="text-white/55 text-xs uppercase tracking-wider mt-1">Uncoated</div></div>
             <div><div className="font-serif text-4xl md:text-5xl font-bold text-teal">{cDays}d</div><div className="text-white/55 text-xs uppercase tracking-wider mt-1">Coated</div></div>
-            <div><div className="font-serif text-4xl md:text-5xl font-bold text-teal-accent">+{gain}%</div><div className="text-white/55 text-xs uppercase tracking-wider mt-1">Life Gain</div></div>
+            <div><div className="font-serif text-4xl md:text-5xl font-bold text-teal">+{gain}%</div><div className="text-white/55 text-xs uppercase tracking-wider mt-1">Life Gain</div></div>
           </div>
         </div>
       </section>
@@ -199,33 +199,33 @@ function VariantPage() {
       {/* DETAILS */}
       <section className="bg-cream py-24">
         <div className="container-x grid md:grid-cols-3 gap-10">
-          <div className="reveal bg-white p-8 rounded-2xl border border-border shadow-sm">
-            <span className="label-eyebrow text-teal block mb-3">Application Process</span>
-            <p className="font-serif text-2xl leading-snug text-ink font-bold">{v.application}</p>
+          <div className="reveal bg-[#17726d]/5 p-8 rounded-2xl border border-[#17726d]/20 shadow-sm">
+            <span className="label-eyebrow text-[#17726d] block mb-3">Application Process</span>
+            <p className="font-serif text-2xl leading-snug text-[#17726d] font-bold">{v.application}</p>
           </div>
-          <div className="reveal bg-white p-8 rounded-2xl border border-border shadow-sm">
-            <span className="label-eyebrow text-teal block mb-3">Pathogen Targets</span>
+          <div className="reveal bg-[#17726d]/5 p-8 rounded-2xl border border-[#17726d]/20 shadow-sm">
+            <span className="label-eyebrow text-[#17726d] block mb-3">Pathogen Targets</span>
             <ul className="space-y-2">
               {v.pathogens.map(p => (
-                <li key={p} className="flex items-start gap-2 text-ink/80 text-sm font-medium"><span className="w-1.5 h-1.5 rounded-full bg-teal mt-2 shrink-0" />{p}</li>
+                <li key={p} className="flex items-start gap-2 text-[#17726d]/80 text-sm font-medium"><span className="w-2 h-2 rounded-full bg-[#17726d] mt-1.5 shrink-0" />{p}</li>
               ))}
             </ul>
           </div>
-          <div className="reveal bg-white p-8 rounded-2xl border border-border shadow-sm">
-            <span className="label-eyebrow text-teal block mb-3">Technical Notes</span>
-            <p className="text-ink/75 leading-relaxed text-sm">{v.notes}</p>
+          <div className="reveal bg-[#17726d]/5 p-8 rounded-2xl border border-[#17726d]/20 shadow-sm">
+            <span className="label-eyebrow text-[#17726d] block mb-3">Technical Notes</span>
+            <p className="text-[#17726d]/75 leading-relaxed text-sm">{v.notes}</p>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-ink text-white py-24 md:py-32">
+      <section className="bg-[#17726d] text-white py-24 md:py-32">
         <div className="container-x text-center max-w-3xl">
           <h3 className="font-serif text-4xl md:text-5xl font-bold">Trial {v.name} on your next export flight.</h3>
           <p className="mt-4 text-white/60 text-base leading-relaxed">
             Partner with us to run full packhouse trials and validation studies customized for your specific logistics lane.
           </p>
-          <Link to="/contact" className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-white text-ink font-semibold hover:bg-cream transition-colors shadow-lg">
+          <Link to="/contact" className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-white text-[#17726d] font-semibold hover:bg-cream transition-colors shadow-lg">
             Request a Packhouse Trial <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

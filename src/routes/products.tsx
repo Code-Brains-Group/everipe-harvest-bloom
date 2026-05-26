@@ -23,7 +23,7 @@ function ProductsLayout() {
 function Products() {
   return (
     <>
-      <section className="bg-forest text-white pt-40 pb-28 md:pb-36">
+      <section className="bg-[#17726d] text-white pt-40 pb-28 md:pb-36">
         <div className="container-x">
           <span className="label-eyebrow text-white/60">Products</span>
           <h1 className="font-serif text-6xl md:text-8xl lg:text-[8.5rem] mt-5 max-w-5xl leading-[0.95]">
@@ -107,9 +107,9 @@ function Products() {
           <h3 className="font-serif text-3xl md:text-4xl text-ink">Ready to extend your supply chain's window?</h3>
           <Link to="/contact" className="btn-primary mt-8">Request a Product Trial <ArrowRight className="w-4 h-4" /></Link>
         </div>
-        <div className="bg-ink py-24 md:py-32 px-8 md:px-16 text-white text-center md:text-left">
+        <div className="bg-[#17726d] py-24 md:py-32 px-8 md:px-16 text-white text-center md:text-left">
           <h3 className="font-serif text-3xl md:text-4xl text-white">Ready to reduce postharvest loss?</h3>
-          <Link to="/contact" className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-white text-ink font-medium hover:bg-cream">Schedule a Consultation <ArrowRight className="w-4 h-4" /></Link>
+          <Link to="/contact" className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-white text-[#17726d] font-medium hover:bg-cream">Schedule a Consultation <ArrowRight className="w-4 h-4" /></Link>
         </div>
       </section>
     </>

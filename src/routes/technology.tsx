@@ -222,10 +222,10 @@ function Tech() {
               
               <div className="space-y-6">
                 {[
-                  { crop: "Avocados", standard: "10-12 Days", everipe: "35-40 Days", factor: "3.5×" },
-                  { crop: "Mangos", standard: "8-10 Days", everipe: "28-32 Days", factor: "3.2×" },
-                  { crop: "Cut Flowers", standard: "7-9 Days", everipe: "21-25 Days", factor: "3.0×" },
-                  { crop: "Tomatoes", standard: "6-8 Days", everipe: "20-24 Days", factor: "3.1×" }
+                  { crop: "Avocados", standard: "25-28 Days", everipe: "50-58 Days", factor: "2.0×" },
+                  { crop: "Mangos", standard: "25-27 Days", everipe: "50-55 Days", factor: "2.0×" },
+                  { crop: "Cut Flowers", standard: "25 Days", everipe: "45 Days", factor: "1.8×" },
+                  { crop: "Tomatoes", standard: "25-30 Days", everipe: "50-60 Days", factor: "2.0×" }
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-xl border border-border hover:bg-[#17726d]/5 transition-all duration-300">
                     <div>

@@ -17,10 +17,10 @@ export const Route = createFileRoute("/exporters")({
 });
 
 const TABLE = [
-  ["Cut Flowers", "7 days (Vase)", "21 days (Vase)", "+200%"],
-  ["Fruity Avo", "9 days (Shelf)", "28 days (Shelf)", "+211%"],
-  ["Fruity Papaya", "7 days (Shelf)", "21 days (Shelf)", "+200%"],
-  ["Veggie Kali", "9 days (Shelf)", "22 days (Shelf)", "+144%"],
+  ["Cut Flowers", "25 days (Vase)", "45 days (Vase)", "+80%"],
+  ["Fruity Avo", "28 days (Shelf)", "58 days (Shelf)", "+107%"],
+  ["Fruity Papaya", "25 days (Shelf)", "48 days (Shelf)", "+92%"],
+  ["Veggie Kali", "26 days (Shelf)", "48 days (Shelf)", "+85%"],
 ];
 
 function Exporters() {

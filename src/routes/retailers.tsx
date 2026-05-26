@@ -72,7 +72,7 @@ function Retailers() {
             },
             { 
               t: "Avocados Stay Peaked", 
-              d: "Treating Fruity Avo skin locks moisture inside and constricts respiratory gas transfer. Avocados maintain shelf-readiness up to 28 days, retaining natural flesh texture and eliminating quick black spot decay.", 
+              d: "Treating Fruity Avo skin locks moisture inside and constricts respiratory gas transfer. Avocados maintain shelf-readiness up to 58 days, retaining natural flesh texture and eliminating quick black spot decay.", 
               img: fruity, 
               flip: true 
             },
