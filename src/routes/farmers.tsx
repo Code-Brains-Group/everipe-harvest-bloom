@@ -27,7 +27,7 @@ function Farmers() {
     <>
       {/* HERO */}
       <section className="relative h-[95vh] overflow-hidden flex items-end">
-        <img src={farmer} alt="Kenyan smallholder farmer at golden hour" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={farmer} alt="Happy Kenyan farmer proudly holding fresh, long-lasting produce" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#17726d]/80 to-transparent" />
         <div className="container-x relative pb-24 text-white max-w-4xl">
           <span className="label-eyebrow text-white/70">The Machakos Story</span>
