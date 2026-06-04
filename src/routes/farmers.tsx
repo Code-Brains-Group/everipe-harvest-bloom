@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import farmer from "@/assets/farmer-portrait.jpg";
+import farmer from "@/assets/farmer-happy-produce.jpg";
 import spray from "@/assets/farmer-spraying.jpg";
 import { SectionLabel } from "@/components/Bits";
 
