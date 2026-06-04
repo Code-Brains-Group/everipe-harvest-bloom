@@ -5,7 +5,7 @@ import hero from "@/assets/hero-packhouse.jpg";
 import bloomy from "@/assets/bloomy-flowers.jpg";
 import veggie from "@/assets/veggie-vegetables.jpg";
 import fruity from "@/assets/fruity-fruits.jpg";
-import farmer from "@/assets/farmer-portrait.jpg";
+import farmer from "@/assets/farmer-happy-produce.jpg";
 import port from "@/assets/exporter-port.jpg";
 import retail from "@/assets/retailer-produce.jpg";
 import aerial from "@/assets/story-aerial.jpg";
