@@ -31,7 +31,7 @@ function Retailers() {
 
       <section className="py-28 md:py-36 bg-cream">
         <div className="container-x grid md:grid-cols-4 gap-6">
-          {[["Shrinkage", "Up to 30% loss in produce departments."],
+          {[["Shrinkage", "Produce departments lose meaningful volume to spoilage every week."],
             ["Turnover costs", "Discounting, repricing, restocking."],
             ["Storage costs", "Refrigeration eats margin."],
             ["Perception", "Customers walk away from wilted shelves."],
@@ -47,8 +47,8 @@ function Retailers() {
       <section className="py-28 md:py-36 bg-white">
         <div className="container-x space-y-24">
           {[
-            { t: "Extend shelf life", d: "Produce stays sale-ready 2–3× longer on display.", img: veg, flip: false },
-            { t: "Reduce shrinkage", d: "Cut waste by up to 60% in tomato and stone-fruit categories.", img: fruit, flip: true },
+            { t: "Extend shelf life", d: "Produce stays sale-ready longer on display.", img: veg, flip: false },
+            { t: "Reduce shrinkage", d: "Cut waste in tomato, berry and stone-fruit categories.", img: fruit, flip: true },
             { t: "Optimize storage", d: "Lower cold-storage demand. Free up backroom capacity.", img: retail, flip: false },
           ].map(({ t, d, img, flip }) => (
             <div key={t} className={`grid md:grid-cols-2 gap-10 items-center ${flip ? "md:[&>:first-child]:order-2" : ""}`}>
