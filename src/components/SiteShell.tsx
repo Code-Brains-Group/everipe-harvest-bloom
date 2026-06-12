@@ -7,7 +7,6 @@ import everipeLogo from "@/assets/logo/everipeLogo.png";
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/technology", label: "Technology" },
-  { to: "/products", label: "Products" },
   { to: "/farmers", label: "Farmers" },
   { to: "/exporters", label: "Exporters" },
   { to: "/retailers", label: "Retailers" },
