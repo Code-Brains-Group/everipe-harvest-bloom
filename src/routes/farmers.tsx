@@ -17,7 +17,8 @@ export const Route = createFileRoute("/farmers")({
 
 const FAQS = [
   ["Will it wash off in rain?", "TAEC bonds to the produce surface within 10 minutes and remains effective through normal rain exposure post-cure."],
-  ["Is it safe to eat?", "Yes. TAEC is GRAS-certified, allergen-free and made from food-grade plant biopolymers."],
+  ["Is it safe to eat?", "Yes. TAEC is made from food-grade, plant-derived biopolymers and is designed to be allergen-free. Independent certification work is in progress."],
+  ["Will my fruit still ripen normally?", "Yes. Everipe slows respiration so fruit ripens more gradually, but it still ripens. Avocados, mangoes and bananas continue to mature — they just give you a longer window to sell, transport and eat them at peak quality, instead of all at once."],
   ["How much does it cost?", "Less than 1% of typical revenue per harvest. Most farmers see payback on the first cycle."],
 ];
 
@@ -90,13 +91,13 @@ function Farmers() {
           </div>
           <ul className="space-y-7 reveal">
             {[
-              ["50-90%", "Postharvest losses reduced"],
-              ["3x longer", "Shelf life to wait for the right buyer"],
-              ["20-30%", "Premium prices when you sell on your terms"],
-              ["1 harvest", "Payback on first application"],
+              ["Longer", "Shelf life to wait for the right buyer"],
+              ["Fewer losses", "Less harvest lost to spoilage at the farm gate"],
+              ["Better prices", "Negotiate when you sell, instead of being forced to"],
+              ["Fast payback", "Designed to pay back on the first harvest cycle"],
             ].map(([n, d]) => (
               <li key={n}>
-                <div className="font-serif text-4xl md:text-5xl text-[#17726d]">{n}</div>
+                <div className="font-serif text-3xl md:text-4xl text-[#17726d]">{n}</div>
                 <div className="text-[#17726d]/70 mt-1">{d}</div>
               </li>
             ))}
@@ -128,8 +129,9 @@ function Farmers() {
       {/* ECONOMICS */}
       <section className="py-28 md:py-36 bg-white">
         <div className="container-x">
-          <SectionLabel>Economics</SectionLabel>
-          <h2 className="font-serif text-4xl md:text-5xl mb-12 reveal">What one mango harvest looks like.</h2>
+          <SectionLabel>Illustrative example</SectionLabel>
+          <h2 className="font-serif text-4xl md:text-5xl mb-4 reveal">What one mango harvest could look like.</h2>
+          <p className="text-[#17726d]/70 max-w-2xl mb-12">A worked example based on typical Machakos mango economics. Real results will vary by farm, season and buyer.</p>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white border border-[#17726d] p-10 rounded-2xl reveal">
               <div className="label-eyebrow text-[#17726d]/50">Without Everipe</div>
@@ -153,25 +155,6 @@ function Farmers() {
           <div className="text-center mt-14 reveal">
             <div className="font-serif text-7xl md:text-8xl text-[#17726d]">+104%</div>
             <div className="text-[#17726d]/65 mt-2">Revenue uplift on a single mango harvest</div>
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section className="py-28 md:py-36 bg-[#17726d] text-white">
-        <div className="container-x">
-          <SectionLabel>Voices from Machakos</SectionLabel>
-          <h2 className="font-serif text-4xl md:text-5xl mb-12">Farmers who took back control.</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              ["Before Everipe, I had to sell my mangoes the same day I harvested. The buyers knew I had no choice. Now I wait three days, call the exporter myself, and get almost double the price.", "Joseph Kiprop · Mango, Machakos County"],
-              ["My avocados used to spoil before reaching Nairobi. Now I sell to exporters in Mombasa for 35% more. The middlemen finally have to compete for my crop.", "Mary Wanjiku · Avocado, Murang'a"],
-            ].map(([q, a]) => (
-              <div key={a} className="bg-white/5 p-10 rounded-2xl reveal">
-                <p className="font-serif text-2xl leading-snug">"{q}"</p>
-                <p className="mt-6 text-sm text-white/55">{a}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
