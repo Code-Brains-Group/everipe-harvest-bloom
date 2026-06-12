@@ -146,7 +146,7 @@ function WhoItsFor() {
     {
       id: "farmers", label: "Farmers", img: farmer,
       h: "Reduce losses. Grow income.",
-      pts: ["Cut postharvest losses 50–90%", "Reach markets 5–7 days away", "Command 20–30% premium prices", "Payback on the very first harvest"],
+      pts: ["Reduce postharvest losses", "Reach markets days away", "Sell when prices are right", "Designed to pay back on the first harvest"],
 
       to: "/farmers",
     },
