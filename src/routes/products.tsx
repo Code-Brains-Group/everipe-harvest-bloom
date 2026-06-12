@@ -86,8 +86,8 @@ function Products() {
         <div className="container-x">
           <div className="max-w-3xl reveal">
             <span className="label-eyebrow text-teal">Fruity · Fresh Fruits</span>
-            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl mt-4 leading-[1.02]">Variety-specific protection. Precisely formulated.</h2>
-            <p className="mt-6 text-lg text-ink/70 max-w-xl">3× longer shelf life across our fruit line. Tap any variety to compare coated vs uncoated.</p>
+            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl mt-4 leading-[1.02]">Variety-specific protection.</h2>
+            <p className="mt-6 text-lg text-ink/70 max-w-xl">Each fruit line is tuned to the crop. Tap any variety to compare coated vs uncoated.</p>
           </div>
           <VariantCarousel
             lineLabel="Fruity"
