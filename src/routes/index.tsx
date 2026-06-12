@@ -9,7 +9,7 @@ import farmer from "@/assets/farmer-happy-produce.jpg";
 import port from "@/assets/exporter-port.jpg";
 import retail from "@/assets/retailer-produce.jpg";
 import aerial from "@/assets/story-aerial.jpg";
-import { Stat, SectionLabel } from "@/components/Bits";
+import { SectionLabel } from "@/components/Bits";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -147,6 +147,7 @@ function WhoItsFor() {
       id: "farmers", label: "Farmers", img: farmer,
       h: "Reduce losses. Grow income.",
       pts: ["Cut postharvest losses 50–90%", "Reach markets 5–7 days away", "Command 20–30% premium prices", "Payback on the very first harvest"],
+      // Note: targets, not measured outcomes
       to: "/farmers",
     },
     {
