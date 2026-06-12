@@ -147,13 +147,13 @@ function WhoItsFor() {
       id: "farmers", label: "Farmers", img: farmer,
       h: "Reduce losses. Grow income.",
       pts: ["Cut postharvest losses 50–90%", "Reach markets 5–7 days away", "Command 20–30% premium prices", "Payback on the very first harvest"],
-      // Note: targets, not measured outcomes
+
       to: "/farmers",
     },
     {
       id: "exporters", label: "Exporters", img: port,
       h: "Sea freight quality. Air freight margins.",
-      pts: ["Switch from air to sea freight", "Add 14-day transit buffer", "Cut rejections at destination", "Open distant premium markets"],
+      pts: ["Switch from air to sea freight", "Extend the transit window", "Cut rejections at destination", "Open distant premium markets"],
       to: "/exporters",
     },
     {
