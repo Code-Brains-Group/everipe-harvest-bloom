@@ -7,7 +7,6 @@ import everipeLogo from "@/assets/logo/everipeLogo.png";
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/technology", label: "Technology" },
-  { to: "/products", label: "Products" },
   { to: "/farmers", label: "Farmers" },
   { to: "/exporters", label: "Exporters" },
   { to: "/retailers", label: "Retailers" },
@@ -82,7 +81,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                 Where every harvest counts.
               </p>
             </div>
-            <FooterCol title="Everipe" links={[["About", "/our-story"], ["Technology", "/technology"], ["Products", "/products"]]} />
+            <FooterCol title="Everipe" links={[["About", "/our-story"], ["Technology", "/technology"]]} />
             <FooterCol title="Stakeholders" links={[["Farmers", "/farmers"], ["Exporters", "/exporters"], ["Retailers", "/retailers"]]} />
             <FooterCol title="Contact" links={[["hello@everipe.com", "mailto:hello@everipe.com"], ["Partner with Us", "/contact"], ["Get in Touch", "/contact"]]} />
           </div>

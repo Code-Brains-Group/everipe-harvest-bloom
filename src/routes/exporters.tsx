@@ -102,15 +102,14 @@ function Exporters() {
 
           <div className="mt-16 grid md:grid-cols-3 gap-6">
             {[
-              { icon: TrendingDown, stat: "−60%", title: "Freight Cost", desc: "Replace air with sea and cut logistics spend by more than half." },
-              { icon: Ship, stat: "100%", title: "Sea Freight", desc: "Move full shipments by ocean — even the most perishable SKUs." },
-              { icon: ShieldCheck, stat: "−85%", title: "Rejections", desc: "Arrive within spec. Pass inspections by regulators on the first try." },
-            ].map(({ icon: Icon, stat, title, desc }) => (
+              { icon: TrendingDown, title: "Lower freight cost", desc: "Replace expensive air freight with sea — the same route, a fraction of the spend." },
+              { icon: Ship, title: "One mode, one route", desc: "Move full shipments by ocean, including categories that traditionally rely on air." },
+              { icon: ShieldCheck, title: "Fewer rejections", desc: "Arrive within spec so produce meets inspection requirements on arrival." },
+            ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="bg-white text-[#17726d] p-10 rounded-2xl">
                 <Icon className="w-8 h-8 mb-6" />
-                <div className="font-serif text-6xl mb-3">{stat}</div>
                 <h3 className="font-serif text-2xl">{title}</h3>
-                <p className="mt-3 text-[#17726d]/70 text-sm leading-relaxed">{desc}</p>
+                <p className="mt-3 text-[#17726d]/70 leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -132,8 +131,8 @@ function Exporters() {
               to reach Europe, the Middle East, and Asia in time.
             </p>
             <p className="mt-6 text-[#17726d]/80 text-lg leading-relaxed">
-              Our coating extends shelf life by 3 to 4 times. Suddenly a 21-day sea voyage
-              isn't a risk — it's the most profitable route on the map.
+              Our coating is designed to extend shelf life significantly, turning a long sea voyage
+              from a risk into a viable, lower-cost route.
             </p>
           </div>
         </div>
@@ -142,13 +141,14 @@ function Exporters() {
       {/* COMPARISON TABLE */}
       <section className="bg-[#17726d] text-white py-28 md:py-36">
         <div className="container-x">
-          <SectionLabel><span className="text-white/70">Shelf-life extension</span></SectionLabel>
-          <h2 className="font-serif text-4xl md:text-5xl mb-12 mt-4 text-white">By crop. By route.</h2>
+          <SectionLabel><span className="text-white/70">Shelf-life targets</span></SectionLabel>
+          <h2 className="font-serif text-4xl md:text-5xl mb-4 mt-4 text-white">By crop. By route.</h2>
+          <p className="text-white/70 mb-12 max-w-2xl">Illustrative targets based on category research. Independent trial results will be published as they are validated.</p>
           <div className="overflow-x-auto rounded-2xl border border-white/20 bg-white/5">
             <table className="w-full text-left">
               <thead className="bg-white/10">
                 <tr className="text-xs uppercase tracking-wider text-white/70">
-                  {["Product", "Without Coating", "With Everipe", "Improvement"].map(h => (
+                  {["Product", "Without coating", "With Everipe (target)", "Targeted uplift"].map(h => (
                     <th key={h} className="px-6 py-5">{h}</th>
                   ))}
                 </tr>
@@ -196,20 +196,6 @@ function Exporters() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-28 md:py-36 bg-[#17726d] text-white">
-        <div className="container-x grid md:grid-cols-2 gap-12">
-          {[
-            ["We replaced 80% of our air freight with sea routes. Margins doubled in six months.", "Hassan Ahmed · Mango Exporter, East Africa"],
-            ["Our buyers in Europe stopped rejecting shipments. The savings paid for the program in one quarter.", "Carlos Mendoza · Avocado Exporter, Latin America"],
-          ].map(([q, a]) => (
-            <div key={a} className="border-l-2 border-white/30 pl-8">
-              <p className="font-serif text-3xl leading-snug text-white">"{q}"</p>
-              <p className="mt-6 text-sm text-white/70 label-eyebrow">{a}</p>
-            </div>
-          ))}
-        </div>
-      </section>
     </>
   );
 }

@@ -31,7 +31,7 @@ function Retailers() {
 
       <section className="py-28 md:py-36 bg-cream">
         <div className="container-x grid md:grid-cols-4 gap-6">
-          {[["Shrinkage", "Up to 30% loss in produce departments."],
+          {[["Shrinkage", "Produce departments lose meaningful volume to spoilage every week."],
             ["Turnover costs", "Discounting, repricing, restocking."],
             ["Storage costs", "Refrigeration eats margin."],
             ["Perception", "Customers walk away from wilted shelves."],
@@ -47,8 +47,8 @@ function Retailers() {
       <section className="py-28 md:py-36 bg-white">
         <div className="container-x space-y-24">
           {[
-            { t: "Extend shelf life", d: "Produce stays sale-ready 2–3× longer on display.", img: veg, flip: false },
-            { t: "Reduce shrinkage", d: "Cut waste by up to 60% in tomato and stone-fruit categories.", img: fruit, flip: true },
+            { t: "Extend shelf life", d: "Produce stays sale-ready longer on display.", img: veg, flip: false },
+            { t: "Reduce shrinkage", d: "Cut waste in tomato, berry and stone-fruit categories.", img: fruit, flip: true },
             { t: "Optimize storage", d: "Lower cold-storage demand. Free up backroom capacity.", img: retail, flip: false },
           ].map(({ t, d, img, flip }) => (
             <div key={t} className={`grid md:grid-cols-2 gap-10 items-center ${flip ? "md:[&>:first-child]:order-2" : ""}`}>
@@ -66,37 +66,30 @@ function Retailers() {
 
       <section className="py-28 md:py-36 bg-cream">
         <div className="container-x">
-          <SectionLabel>The financial case</SectionLabel>
-          <h2 className="font-serif text-4xl md:text-5xl mb-12 reveal">500kg tomatoes per week.</h2>
+          <SectionLabel>Illustrative example</SectionLabel>
+          <h2 className="font-serif text-4xl md:text-5xl mb-4 reveal">500kg tomatoes per week.</h2>
+          <p className="text-ink/65 max-w-2xl mb-12">A worked example of how reduced shrinkage could translate into savings. Real outcomes depend on category, climate and operations.</p>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white p-10 rounded-2xl reveal">
               <div className="label-eyebrow text-ink/50 mb-5">Without Everipe</div>
               <Stats rows={[["Weekly waste", "30%"], ["Annual loss (kg)", "7,800"], ["Annual loss ($)", "$19,500"]]} />
             </div>
             <div className="bg-teal text-white p-10 rounded-2xl reveal">
-              <div className="label-eyebrow text-white/60 mb-5">With Everipe</div>
+              <div className="label-eyebrow text-white/60 mb-5">With Everipe (target)</div>
               <Stats rows={[["Weekly waste", "5%"], ["Annual loss (kg)", "1,300"], ["Annual loss ($)", "$3,380"]]} />
             </div>
           </div>
           <div className="text-center mt-14 reveal">
             <div className="font-serif text-7xl md:text-8xl text-teal">$16,120</div>
-            <div className="text-ink/65 mt-2">Annual savings · per category, per store</div>
+            <div className="text-ink/65 mt-2">Illustrative annual savings · per category, per store</div>
           </div>
         </div>
       </section>
 
       <section className="py-28 md:py-36 bg-ink text-white">
-        <div className="container-x grid md:grid-cols-2 gap-8">
-          {[
-            ["We cut produce shrinkage by half across 14 stores in the first quarter.", "Sarah Chen · Category Director, Premium Grocer"],
-            ["Our customers notice. The avocados stay green to the last on shelf.", "David Okello · Store Manager, Nairobi"],
-          ].map(([q, a]) => (
-            <div key={a} className="bg-white/5 p-10 rounded-2xl reveal">
-              <p className="font-serif text-2xl">"{q}"</p>
-              <p className="mt-6 text-sm text-white/55">{a}</p>
-            </div>
-          ))}
-          <div className="md:col-span-2"><Link to="/our-story" className="btn-primary">Talk to our retail team <ArrowRight className="w-4 h-4" /></Link></div>
+        <div className="container-x text-center">
+          <h2 className="font-serif text-4xl md:text-5xl max-w-3xl mx-auto">Want to pilot Everipe in your stores?</h2>
+          <Link to="/contact" className="btn-primary mt-10 inline-flex">Talk to our retail team <ArrowRight className="w-4 h-4" /></Link>
         </div>
       </section>
     </>

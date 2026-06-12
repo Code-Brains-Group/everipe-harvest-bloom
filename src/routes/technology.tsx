@@ -15,12 +15,12 @@ export const Route = createFileRoute("/technology")({
 });
 
 const PROPS = [
-  { icon: Droplet, stat: "60%", t: "Moisture Lock", d: "Reduces water loss across the entire ripening curve." },
-  { icon: Wind, stat: "3×", t: "Gas Exchange Control", d: "Slows respiration. Triples time to peak ripeness." },
-  { icon: ShieldCheck, stat: "GRAS", t: "Fully Edible", d: "Generally recognised as safe. Nothing to wash off." },
-  { icon: Leaf, stat: "100%", t: "Plant-Derived", d: "Biopolymer base. No synthetic films or waxes." },
-  { icon: Bug, stat: "85%", t: "Antimicrobial", d: "Reduces postharvest pathogens by up to 85%." },
-  { icon: Thermometer, stat: "Ambient", t: "Thermal Adaptability", d: "Performs across the heat ranges of real supply chains." },
+  { icon: Droplet, t: "Moisture Lock", d: "Reduces water loss across the ripening curve." },
+  { icon: Wind, t: "Gas Exchange Control", d: "Slows respiration and delays peak ripeness." },
+  { icon: ShieldCheck, t: "Food-grade", d: "Made from food-grade ingredients. Nothing to wash off." },
+  { icon: Leaf, t: "Plant-Derived", d: "Biopolymer base. No synthetic films or waxes." },
+  { icon: Bug, t: "Antimicrobial", d: "Designed to suppress postharvest pathogens." },
+  { icon: Thermometer, t: "Ambient Performance", d: "Built for the heat ranges of real supply chains." },
 ];
 
 const STEPS = [
@@ -56,12 +56,11 @@ function Tech() {
             <h2 className="font-serif text-4xl md:text-6xl">Six properties. <span className="text-teal">One simple spray.</span></h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {PROPS.map(({ icon: Icon, stat, t, d }, i) => (
+            {PROPS.map(({ icon: Icon, t, d }, i) => (
               <div key={t} className={`bg-white rounded-2xl p-8 reveal ${i % 5 === 1 ? "lg:translate-y-8" : ""}`}>
                 <Icon className="w-7 h-7 text-teal mb-6" strokeWidth={1.5} />
-                <div className="font-serif text-4xl text-teal mb-2">{stat}</div>
-                <h3 className="text-lg font-medium mb-1">{t}</h3>
-                <p className="text-ink/65 text-sm">{d}</p>
+                <h3 className="font-serif text-2xl text-teal mb-2">{t}</h3>
+                <p className="text-ink/70">{d}</p>
               </div>
             ))}
           </div>
@@ -94,15 +93,15 @@ function Tech() {
         <div className="container-x">
           <div className="max-w-3xl mb-14 reveal">
             <SectionLabel>Safety & Compliance</SectionLabel>
-            <h2 className="font-serif text-4xl md:text-5xl">Validated where it matters.</h2>
+            <h2 className="font-serif text-4xl md:text-5xl">Designed with safety in mind.</h2>
           </div>
           <div className="grid md:grid-cols-5 gap-4">
-            {["Food-safe (GRAS)", "No flavour change", "Allergen-free", "Environmentally benign", "No PPE required"].map((p) => (
+            {["Food-grade ingredients", "No flavour change", "Allergen-free", "Biodegradable", "Simple to apply"].map((p) => (
               <div key={p} className="bg-white p-7 rounded-2xl text-sm font-medium reveal">{p}</div>
             ))}
           </div>
           <p className="mt-10 text-sm text-ink/55 max-w-2xl">
-            Validated with Kenyan research institutions and aligned with international food science bodies.
+            Formulation principles are aligned with established food-science research. Independent safety and efficacy testing is in progress.
           </p>
         </div>
       </section>
@@ -110,8 +109,8 @@ function Tech() {
       {/* CTA */}
       <section className="py-32 bg-veggie text-center">
         <div className="container-x">
-          <h2 className="font-serif text-4xl md:text-6xl reveal">Read the research behind <span className="text-teal">TAEC.</span></h2>
-          <Link to="/our-story" className="btn-primary mt-10">Access Documentation <ArrowRight className="w-4 h-4" /></Link>
+          <h2 className="font-serif text-4xl md:text-6xl reveal">Want to learn more about <span className="text-teal">TAEC?</span></h2>
+          <Link to="/contact" className="btn-primary mt-10">Talk to our team <ArrowRight className="w-4 h-4" /></Link>
         </div>
       </section>
     </>

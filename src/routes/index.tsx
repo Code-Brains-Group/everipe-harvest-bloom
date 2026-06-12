@@ -9,13 +9,13 @@ import farmer from "@/assets/farmer-happy-produce.jpg";
 import port from "@/assets/exporter-port.jpg";
 import retail from "@/assets/retailer-produce.jpg";
 import aerial from "@/assets/story-aerial.jpg";
-import { Stat, SectionLabel } from "@/components/Bits";
+import { SectionLabel } from "@/components/Bits";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Everipe — Stronger Harvests, Longer Freshness, Zero Waste" },
-      { name: "description", content: "TAEC: a thermally adaptive, plant-based spray that turns any logistics chain into a zero-energy cold chain." },
+      { name: "description", content: "A plant-based spray that extends the shelf life of fresh produce — no cold chain required." },
     ],
   }),
   component: Home,
@@ -41,7 +41,7 @@ function Home() {
               Stronger Harvests,<br />Longer <span className="font-serif text-white/90">Freshness,</span><br /> and Zero Waste.
             </h1>
             <p className="mt-7 text-lg md:text-xl text-white/85 max-w-2xl leading-relaxed">
-              The world's first thermally adaptive coating that turns any logistics chain into a zero-energy cold chain.
+              A plant-based coating that keeps produce fresh, longer.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link to="/technology" className="btn-primary">Explore the Technology <ArrowRight className="w-4 h-4" /></Link>
@@ -73,7 +73,7 @@ function Home() {
       <section className="bg-teal text-white py-28 md:py-40">
         <div className="container-x">
           <h2 className="font-serif text-4xl md:text-6xl leading-tight max-w-5xl reveal">
-            By 2050, we must feed 10 billion people. The cold chain is failing. <span className="text-white/70">We built the solution.</span>
+            By 2050, we must feed 10 billion people. The cold chain is failing. <span className="text-white/70">We are building the solution.</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-6 mt-16">
             {[
@@ -90,16 +90,6 @@ function Home() {
         </div>
       </section>
 
-      {/* STATS BAND */}
-      <section className="bg-forest text-white py-24 md:py-32">
-        <div className="container-x grid grid-cols-2 md:grid-cols-4 gap-12">
-          <Stat value="60%" label="Less moisture loss" />
-          <Stat value="85%" label="Reduction in disease" />
-          <Stat value="3×" label="Longer to peak ripeness" />
-          <Stat value="40%" label="Cold chain loss reduction" />
-        </div>
-      </section>
-
       {/* PRODUCT LINES */}
       <section className="py-28 md:py-40 bg-cream">
         <div className="container-x">
@@ -111,7 +101,7 @@ function Home() {
             {[
               { name: "Bloomy", tag: "Cut Flowers", desc: "Ship by sea. Arrive fresh.", img: bloomy, bg: "bg-bloomy", accent: "text-bloomy-accent" },
               { name: "Veggie", tag: "Fresh Vegetables", desc: "Extend shelf life. Eliminate pathogens.", img: veggie, bg: "bg-veggie", accent: "text-veggie-accent" },
-              { name: "Fruity", tag: "Fresh Fruits", desc: "Variety-specific. Precisely formulated.", img: fruity, bg: "bg-fruity", accent: "text-fruity-accent" },
+              { name: "Fruity", tag: "Fresh Fruits", desc: "Variety-specific protection.", img: fruity, bg: "bg-fruity", accent: "text-fruity-accent" },
             ].map((p) => (
               <Link key={p.name} to="/products" className={`${p.bg} rounded-3xl p-7 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-2 reveal`}>
                 <div className="flex items-center justify-between">
@@ -156,13 +146,14 @@ function WhoItsFor() {
     {
       id: "farmers", label: "Farmers", img: farmer,
       h: "Reduce losses. Grow income.",
-      pts: ["Cut postharvest losses 50–90%", "Reach markets 5–7 days away", "Command 20–30% premium prices", "Payback on the very first harvest"],
+      pts: ["Reduce postharvest losses", "Reach markets days away", "Sell when prices are right", "Designed to pay back on the first harvest"],
+
       to: "/farmers",
     },
     {
       id: "exporters", label: "Exporters", img: port,
       h: "Sea freight quality. Air freight margins.",
-      pts: ["Switch from air to sea freight", "Add 14-day transit buffer", "Cut rejections at destination", "Open distant premium markets"],
+      pts: ["Switch from air to sea freight", "Extend the transit window", "Cut rejections at destination", "Open distant premium markets"],
       to: "/exporters",
     },
     {
