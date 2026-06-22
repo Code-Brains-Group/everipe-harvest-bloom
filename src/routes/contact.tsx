@@ -7,13 +7,24 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Partner with Everipe" },
-      { name: "description", content: "Talk to the Everipe team about deploying TAEC across your farm, packhouse, or supply chain." },
+      {
+        name: "description",
+        content:
+          "Talk to the Everipe team about piloting TAEC across your farm, packhouse, store, or supply chain.",
+      },
     ],
   }),
   component: Contact,
 });
 
-const ROLES = ["Farmer / Cooperative", "Exporter", "Retailer / Distributor", "Investor", "Press", "Other"];
+const ROLES = [
+  "Farmer / Cooperative",
+  "Exporter",
+  "Retailer / Distributor",
+  "Investor",
+  "Press",
+  "Other",
+];
 
 function Contact() {
   const [sent, setSent] = useState(false);
@@ -27,7 +38,8 @@ function Contact() {
               Let's keep more harvests <span className="text-teal">alive.</span>
             </h1>
             <p className="mt-6 text-lg text-ink/70 leading-relaxed">
-              Whether you grow, ship, sell, or invest in fresh produce — we'd love to talk about how TAEC can extend your shelf life and reduce waste.
+              Whether you grow, ship, sell, or invest in fresh produce — we'd love to design a
+              responsible pilot with clear controls, safety review, and measurable outcomes.
             </p>
 
             <ul className="mt-12 space-y-6">
@@ -35,7 +47,7 @@ function Contact() {
                 <Mail className="w-5 h-5 text-teal mt-1 shrink-0" />
                 <div>
                   <div className="label-eyebrow text-ink/55">Email</div>
-                  <a href="mailto:hello@everipe.com" className="text-ink hover:text-teal">hello@everipe.com</a>
+                  <div className="text-ink">Use the pilot form on this page</div>
                 </div>
               </li>
               <li className="flex gap-4">
@@ -49,7 +61,7 @@ function Contact() {
                 <Building2 className="w-5 h-5 text-teal mt-1 shrink-0" />
                 <div>
                   <div className="label-eyebrow text-ink/55">Partnerships</div>
-                  <a href="mailto:partners@everipe.com" className="text-ink hover:text-teal">partners@everipe.com</a>
+                  <div className="text-ink">Farm, packhouse, export, and retail pilots</div>
                 </div>
               </li>
             </ul>
@@ -57,7 +69,10 @@ function Contact() {
 
           <div className="lg:col-span-7">
             <form
-              onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+              onSubmit={(e) => {
+                e.preventDefault();
+                setSent(true);
+              }}
               className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-border"
             >
               {sent ? (
@@ -75,13 +90,23 @@ function Contact() {
                   <Field label="Email" name="email" type="email" required />
                   <div>
                     <label className="label-eyebrow text-ink/60 block mb-2">I am a…</label>
-                    <select name="role" className="w-full rounded-xl border border-border bg-cream/40 px-4 py-3 text-ink focus:outline-none focus:border-teal">
-                      {ROLES.map((r) => <option key={r}>{r}</option>)}
+                    <select
+                      name="role"
+                      className="w-full rounded-xl border border-border bg-cream/40 px-4 py-3 text-ink focus:outline-none focus:border-teal"
+                    >
+                      {ROLES.map((r) => (
+                        <option key={r}>{r}</option>
+                      ))}
                     </select>
                   </div>
                   <div>
                     <label className="label-eyebrow text-ink/60 block mb-2">How can we help?</label>
-                    <textarea name="message" rows={5} required className="w-full rounded-xl border border-border bg-cream/40 px-4 py-3 text-ink focus:outline-none focus:border-teal" />
+                    <textarea
+                      name="message"
+                      rows={5}
+                      required
+                      className="w-full rounded-xl border border-border bg-cream/40 px-4 py-3 text-ink focus:outline-none focus:border-teal"
+                    />
                   </div>
                   <button type="submit" className="btn-primary mt-2 self-start">
                     Send message <ArrowRight className="w-4 h-4" />
@@ -97,7 +122,17 @@ function Contact() {
   );
 }
 
-function Field({ label, name, type = "text", required }: { label: string; name: string; type?: string; required?: boolean }) {
+function Field({
+  label,
+  name,
+  type = "text",
+  required,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+}) {
   return (
     <div>
       <label className="label-eyebrow text-ink/60 block mb-2">{label}</label>

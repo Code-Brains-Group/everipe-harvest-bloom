@@ -74,18 +74,38 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Everipe — Eliminating Food Loss with Zero-Energy Cold Chains" },
-      { name: "description", content: "TAEC: a 100% plant-based spray that extends fresh produce shelf life — no cold chain required." },
+      { title: "Everipe — Plant-Based Postharvest Protection" },
+      {
+        name: "description",
+        content:
+          "Everipe is developing a plant-based postharvest coating to help fresh produce stay fresher for longer in real-world supply chains.",
+      },
       { name: "author", content: "Everipe" },
-      { property: "og:title", content: "Everipe — Eliminating Food Loss with Zero-Energy Cold Chains" },
-      { property: "og:description", content: "TAEC: a 100% plant-based spray that extends fresh produce shelf life — no cold chain required." },
+      { property: "og:title", content: "Everipe — Plant-Based Postharvest Protection" },
+      {
+        property: "og:description",
+        content:
+          "Everipe is developing a plant-based postharvest coating to help fresh produce stay fresher for longer in real-world supply chains.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@everipe" },
-      { name: "twitter:title", content: "Everipe — Eliminating Food Loss with Zero-Energy Cold Chains" },
-      { name: "twitter:description", content: "TAEC: a 100% plant-based spray that extends fresh produce shelf life — no cold chain required." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea37b242-5dd1-4251-84f3-0a9d08ada2fc" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea37b242-5dd1-4251-84f3-0a9d08ada2fc" },
+      { name: "twitter:title", content: "Everipe — Plant-Based Postharvest Protection" },
+      {
+        name: "twitter:description",
+        content:
+          "Everipe is developing a plant-based postharvest coating to help fresh produce stay fresher for longer in real-world supply chains.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea37b242-5dd1-4251-84f3-0a9d08ada2fc",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea37b242-5dd1-4251-84f3-0a9d08ada2fc",
+      },
     ],
     links: [
       { rel: "icon", type: "image/png", href: faviconUrl },
@@ -107,9 +127,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Everipe",
-          url: "https://everipe.com",
-          description: "TAEC: a 100% plant-based spray that extends fresh produce shelf life — no cold chain required.",
-          slogan: "Eliminating food loss through smart, zero-energy cold chains.",
+          url: "https://everipe.netlify.app",
+          description:
+            "Everipe is developing a plant-based postharvest coating to help fresh produce stay fresher for longer in real-world supply chains.",
+          slogan: "Where every harvest counts.",
           foundingLocation: "Nairobi, Kenya",
         }),
       },
@@ -146,4 +167,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-

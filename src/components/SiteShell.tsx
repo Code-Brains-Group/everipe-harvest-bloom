@@ -7,7 +7,6 @@ import everipeLogo from "@/assets/logo/everipeLogo.png";
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/technology", label: "Technology" },
-  { to: "/products", label: "Products" },
   { to: "/exporters", label: "Exporters" },
   { to: "/farmers", label: "Farmers" },
   { to: "/retailers", label: "Retailers" },
@@ -18,16 +17,20 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   const path = useRouterState({ select: (s) => s.location.pathname });
 
-  useEffect(() => { setOpen(false); }, [path]);
+  useEffect(() => {
+    setOpen(false);
+  }, [path]);
 
   return (
     <div className="min-h-screen bg-cream text-ink">
-      <header
-        className="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-cream/95 backdrop-blur border-b border-border"
-      >
+      <header className="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-cream/95 backdrop-blur border-b border-border">
         <div className="container-x flex items-center justify-between h-18 md:h-22">
           <Link to="/" className="flex items-center gap-2 group">
-            <img src={everipeLogo} alt="Everipe Logo" className="h-14 md:h-16 w-auto object-contain shrink-0" />
+            <img
+              src={everipeLogo}
+              alt="Everipe Logo"
+              className="h-14 md:h-16 w-auto object-contain shrink-0"
+            />
           </Link>
           <nav className="hidden lg:flex items-center gap-8">
             {NAV.map((n) => (
@@ -43,12 +46,21 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             ))}
           </nav>
           <div className="hidden md:flex items-center gap-3">
-            <Link to="/contact" className="text-sm px-4 py-2 rounded-full border border-[#17726d]/20 text-[#17726d] hover:bg-[#17726d] hover:text-white">
+            <Link
+              to="/contact"
+              className="text-sm px-4 py-2 rounded-full border border-[#17726d]/20 text-[#17726d] hover:bg-[#17726d] hover:text-white"
+            >
               Partner With Us
             </Link>
-            <Link to="/contact" className="btn-primary text-sm !py-2.5">Get in Touch</Link>
+            <Link to="/contact" className="btn-primary text-sm !py-2.5">
+              Get in Touch
+            </Link>
           </div>
-          <button onClick={() => setOpen(true)} className="lg:hidden p-2 text-ink" aria-label="Menu">
+          <button
+            onClick={() => setOpen(true)}
+            className="lg:hidden p-2 text-ink"
+            aria-label="Menu"
+          >
             <Menu className="w-6 h-6" />
           </button>
         </div>
@@ -57,14 +69,27 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       {open && (
         <div className="fixed inset-0 z-[60] bg-teal text-white animate-fade-in">
           <div className="container-x flex items-center justify-between h-18 md:h-22">
-            <img src={everipeLogo} alt="Everipe Logo" className="h-14 w-auto object-contain brightness-0 invert shrink-0" />
-            <button onClick={() => setOpen(false)} className="p-2" aria-label="Close"><X className="w-6 h-6" /></button>
+            <img
+              src={everipeLogo}
+              alt="Everipe Logo"
+              className="h-14 w-auto object-contain shrink-0"
+            />
+            <button onClick={() => setOpen(false)} className="p-2" aria-label="Close">
+              <X className="w-6 h-6" />
+            </button>
           </div>
           <nav className="flex flex-col items-center gap-7 mt-16">
             {NAV.map((n) => (
-              <Link key={n.to} to={n.to} className="font-serif text-3xl">{n.label}</Link>
+              <Link key={n.to} to={n.to} className="font-serif text-3xl">
+                {n.label}
+              </Link>
             ))}
-            <Link to="/contact" className="mt-6 px-6 py-3 rounded-full bg-white text-teal font-medium">Get in Touch</Link>
+            <Link
+              to="/contact"
+              className="mt-6 px-6 py-3 rounded-full bg-white text-teal font-medium"
+            >
+              Get in Touch
+            </Link>
           </nav>
         </div>
       )}
@@ -76,15 +101,40 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           <div className="grid md:grid-cols-5 gap-12">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-5">
-                <img src={everipeLogo} alt="Everipe Logo" className="h-20 w-auto object-contain brightness-0 invert shrink-0" />
+                <img
+                  src={everipeLogo}
+                  alt="Everipe Logo"
+                  className="h-16 md:h-20 w-auto object-contain shrink-0"
+                />
               </div>
               <p className="font-serif text-2xl text-white/90 leading-snug max-w-sm">
                 Where every harvest counts.
               </p>
             </div>
-            <FooterCol title="Everipe" links={[["About", "/our-story"], ["Technology", "/technology"], ["Products", "/products"]]} />
-            <FooterCol title="Stakeholders" links={[["Exporters", "/exporters"], ["Farmers", "/farmers"], ["Retailers", "/retailers"]]} />
-            <FooterCol title="Contact" links={[["hello@everipe.com", "mailto:hello@everipe.com"], ["Partner with Us", "/contact"], ["Get in Touch", "/contact"]]} />
+            <FooterCol
+              title="Everipe"
+              links={[
+                ["About", "/our-story"],
+                ["Technology", "/technology"],
+                ["Pilot With Us", "/contact"],
+              ]}
+            />
+            <FooterCol
+              title="Stakeholders"
+              links={[
+                ["Exporters", "/exporters"],
+                ["Farmers", "/farmers"],
+                ["Retailers", "/retailers"],
+              ]}
+            />
+            <FooterCol
+              title="Contact"
+              links={[
+                ["Partner with Us", "/contact"],
+                ["Request a Pilot", "/contact"],
+                ["Get in Touch", "/contact"],
+              ]}
+            />
           </div>
           <div className="mt-16 pt-8 border-t border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs text-white/55">
             <p>© 2026 Everipe. Advanced Postharvest Protection for Global Supply Chains.</p>
@@ -104,9 +154,13 @@ function FooterCol({ title, links }: { title: string; links: [string, string][] 
         {links.map(([l, h]) => (
           <li key={l}>
             {h.startsWith("/") ? (
-              <Link to={h} className="hover:text-white transition-colors">{l}</Link>
+              <Link to={h} className="hover:text-white transition-colors">
+                {l}
+              </Link>
             ) : (
-              <a href={h} className="hover:text-white transition-colors">{l}</a>
+              <a href={h} className="hover:text-white transition-colors">
+                {l}
+              </a>
             )}
           </li>
         ))}
