@@ -61,16 +61,14 @@ function Tech() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#17726d] via-[#17726d]/90 to-transparent" />
         <div className="container-x relative text-white max-w-6xl z-10">
           <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider bg-white/10 border border-white/20 text-white uppercase mb-6 backdrop-blur-sm">
-            Plant-Based Protection
+            Our Technology
           </span>
           <h1 className="font-serif font-bold text-5xl md:text-7xl lg:text-[5.5rem] mt-4 leading-[0.95] tracking-tight text-white">
-            Science that works <br />
-            when{" "}
-            <span className="text-white underline decoration-white/30">infrastructure fails.</span>
+            Plant-based, edible <br />
+            <span className="text-white underline decoration-white/30">biocoatings.</span>
           </h1>
           <p className="mt-8 text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
-            TAEC is a plant-based postharvest coating being tested for its ability to slow moisture
-            loss, respiration, and surface decay when crops move through hot, imperfect logistics.
+            Everipe develops plant-based, edible biocoatings designed to extend the shelf life of fresh fruits and vegetables by stabilizing their postharvest physiology under real-world supply chain conditions.
           </p>
         </div>
       </section>
@@ -80,22 +78,16 @@ function Tech() {
         <div className="container-x">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="reveal">
-              <SectionLabel>Molecular Mechanics</SectionLabel>
+              <SectionLabel>How it works</SectionLabel>
               <h2 className="font-serif text-4xl md:text-5xl leading-tight mt-5 text-ink font-bold">
-                Protection as simple as <span className="text-[#17726d]">a spray.</span>
+                Fresh produce continues to <span className="text-[#17726d]">“live”</span> after harvest.
               </h2>
-              <p className="mt-6 text-lg text-ink/75 leading-relaxed mb-8">
-                Unlike static wax barriers or plastic wraps, TAEC forms a thin, breathable layer directly on the crop surface. This natural barrier helps the fruit retain moisture, slow down ripening, and resist decay during transport.
+              <p className="mt-6 text-lg text-ink/75 leading-relaxed mb-4">
+                It respires, loses moisture, and is highly sensitive to temperature fluctuations, mechanical damage, and microbial infection. These processes accelerate significantly when cold-chain conditions fail or when produce is exposed to long and variable transit routes.
               </p>
-              
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3 text-ink/80">
-                  <Thermometer className="w-5 h-5 text-[#17726d]" /> <strong>Warm Handling:</strong> Reduces stress from heat exposure.
-                </li>
-                <li className="flex items-center gap-3 text-ink/80">
-                  <Wind className="w-5 h-5 text-[#17726d]" /> <strong>Normal Ripening:</strong> Keeps produce breathing naturally.
-                </li>
-              </ul>
+              <p className="text-lg text-ink/75 leading-relaxed mb-8">
+                Everipe’s technology forms a thin, invisible, breathable coating on the surface of fresh produce. This coating is engineered from natural biopolymers derived from agricultural side-streams and is applied post-harvest.
+              </p>
             </div>
 
             <div className="reveal">
@@ -106,6 +98,47 @@ function Tech() {
                   className="w-full h-full object-cover"
                 />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT IT IS MADE FROM WITH USER IMAGE */}
+      <section id="what-it-is-made-from" className="py-24 md:py-32 bg-slate-50 border-t border-border">
+        <div className="container-x">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="reveal order-2 lg:order-1">
+              <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl bg-white flex items-center justify-center border border-border">
+                {/* Placeholder for What it is made from image */}
+                <div className="text-ink/40 font-serif text-xl">Image Placeholder</div>
+              </div>
+            </div>
+
+            <div className="reveal order-1 lg:order-2">
+              <SectionLabel>What it is made from</SectionLabel>
+              <h2 className="font-serif text-4xl md:text-5xl leading-tight mt-5 text-ink font-bold">
+                Starch-derived <span className="text-[#17726d]">matrices.</span>
+              </h2>
+              <p className="mt-6 text-lg text-ink/75 leading-relaxed mb-6">
+                The coatings are built from starch-derived matrices sourced from agricultural waste streams and other locally available biomass.
+              </p>
+              <p className="text-lg text-ink/75 leading-relaxed mb-6 font-semibold">
+                These materials are selected for their ability to:
+              </p>
+              <ul className="space-y-4 mb-6">
+                <li className="flex items-center gap-3 text-ink/80">
+                  <div className="w-2 h-2 rounded-full bg-[#17726d]" /> Form continuous edible films
+                </li>
+                <li className="flex items-center gap-3 text-ink/80">
+                  <div className="w-2 h-2 rounded-full bg-[#17726d]" /> Degrade naturally without residue
+                </li>
+                <li className="flex items-center gap-3 text-ink/80">
+                  <div className="w-2 h-2 rounded-full bg-[#17726d]" /> Maintain safety under global food contact standards
+                </li>
+              </ul>
+              <p className="text-lg text-ink/75 leading-relaxed">
+                We design formulations by tuning molecular structure to balance flexibility, barrier strength, and stability under humid conditions.
+              </p>
             </div>
           </div>
         </div>

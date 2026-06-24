@@ -5,6 +5,7 @@ import {
   ShieldCheck,
   ShoppingBag,
   TrendingDown,
+  Clock,
   type LucideIcon,
 } from "lucide-react";
 import retail from "@/assets/retailer-produce.jpg";
@@ -25,26 +26,26 @@ export const Route = createFileRoute("/retailers")({
   component: Retailers,
 });
 
-const RETAIL_ISSUES: [string, string, LucideIcon][] = [
+const PARTNER_BENEFITS: [string, string, LucideIcon][] = [
   [
-    "Shrinkage Spikes",
-    "Avocados, bananas, and melons can lose value quickly through bruising, over-ripening, and visible defects.",
+    "Reduced Waste",
+    "Decrease in-store waste and shrinkage significantly.",
     TrendingDown,
   ],
   [
-    "Shopper Trust",
-    "Pilots should verify that treatment does not change taste, texture, aroma, or expected ripening behavior.",
-    ShieldCheck,
+    "Extended Shelf-Life",
+    "Keep produce fresh and saleable for longer periods.",
+    Clock,
   ],
   [
-    "Energy Pressure",
-    "Retailers need produce quality without relying only on more cooling, markdowns, and waste disposal.",
+    "Premium Displays",
+    "Maintain vibrant color, firmness, and weight, keeping displays looking fresh.",
     ShoppingBag,
   ],
   [
-    "Display Readiness",
-    "The goal is better-looking produce with a saleable ripeness window shoppers understand.",
-    HelpCircle,
+    "100% Safe & Natural",
+    "Clean, plant-based coatings that are safe for consumption.",
+    ShieldCheck,
   ],
 ];
 
@@ -62,23 +63,22 @@ function Retailers() {
         <div className="container-x relative pb-24 text-white max-w-4xl">
           <span className="label-eyebrow text-white/70">For Retailers</span>
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl mt-4 leading-[0.98] text-white">
-            Lower Shrinkage.
+            Zero waste on your shelves.
             <br />
-            Clearer Ripening.
+            Premium quality for your customers
           </h1>
           <p className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl leading-relaxed">
-            Test whether Everipe can reduce shrinkage on high-value produce while keeping fruit
-            ripening predictable for shoppers.
+            Our clean, plant-based coatings protect fresh produce from spoiling, reducing in-store waste by up to 20% and keeping your displays looking premium for longer….
           </p>
         </div>
       </section>
 
-      {/* RETAIL ISSUES */}
+      {/* WHY PARTNER WITH US */}
       <section className="py-28 md:py-36 bg-white">
         <div className="container-x">
-          <SectionLabel>The Retail Shrink Challenge</SectionLabel>
+          <SectionLabel>Why Partner With Us?</SectionLabel>
           <div className="grid md:grid-cols-4 gap-8 mt-8">
-            {RETAIL_ISSUES.map(([t, d, Icon]) => (
+            {PARTNER_BENEFITS.map(([t, d, Icon]) => (
               <div
                 key={t}
                 className="reveal bg-white p-8 rounded-2xl border border-[#17726d]/15 shadow-sm flex flex-col justify-between"
@@ -96,44 +96,28 @@ function Retailers() {
         </div>
       </section>
 
-      {/* INEDIBLE SKIN HIGHLIGHTS */}
-      <section className="py-28 md:py-36 bg-white border-t border-[#17726d]/10">
-        <div className="container-x space-y-24">
-          {[
-            {
-              t: "Peel and Rind Focus",
-              d: "Early retail pilots can start with crops where treatment is focused on outer rinds and peels, such as avocados, bananas, pineapples, and papayas. Residue and sensory review still matter before any customer-facing claim.",
-              img: fruity,
-              flip: false,
-            },
-            {
-              t: "Avocados Need Predictable Ripening",
-              d: "A good avocado result is not just slower decay. It must still ripen into an edible fruit within a reasonable shopper window, with acceptable texture, flavor, and peel quality.",
-              img: fruity,
-              flip: true,
-            },
-            {
-              t: "Banana & Tropical Fruit Questions",
-              d: "Banana pilots should test whether treatment slows over-ripening without leaving customers waiting too long. Pineapple and papaya pilots should separate rind protection from eating quality.",
-              img: retail,
-              flip: false,
-            },
-          ].map(({ t, d, img, flip }) => (
-            <div
-              key={t}
-              className={`grid md:grid-cols-2 gap-12 items-center ${flip ? "md:[&>:first-child]:order-2" : ""}`}
-            >
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden reveal border border-[#17726d]/10 shadow-md">
-                <img src={img} alt={t} loading="lazy" className="w-full h-full object-cover" />
-              </div>
-              <div className="reveal">
-                <h3 className="font-serif text-4xl md:text-5xl text-ink font-bold leading-tight">
-                  {t}
-                </h3>
-                <p className="mt-5 text-lg text-ink/75 leading-relaxed">{d}</p>
-              </div>
+      {/* HOW IT WORKS */}
+      <section className="py-24 md:py-32 bg-slate-50 border-t border-[#17726d]/10">
+        <div className="container-x">
+          <SectionLabel>How It Works</SectionLabel>
+          <div className="grid md:grid-cols-2 gap-12 mt-12">
+            <div className="reveal">
+              <h3 className="font-serif text-3xl md:text-4xl text-ink font-bold mb-4">
+                Pre-treated Options
+              </h3>
+              <p className="text-lg text-ink/75 leading-relaxed">
+                We work directly with packhouses and exporters to apply our plant-based coatings before produce ever reaches your supply chain. This means fruit arrives ready for the shelf, protected from the moment it was packed.
+              </p>
             </div>
-          ))}
+            <div className="reveal">
+              <h3 className="font-serif text-3xl md:text-4xl text-ink font-bold mb-4">
+                Consistent Supply
+              </h3>
+              <p className="text-lg text-ink/75 leading-relaxed">
+                By stabilizing postharvest physiology, our technology smooths out supply bumps caused by variable transit times or temperature fluctuations, ensuring you have a steady, predictable flow of premium produce.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
