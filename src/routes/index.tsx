@@ -43,7 +43,7 @@ function Home() {
         <div className="relative container-x pb-20 md:pb-28 pt-32 text-white">
           <div className="max-w-4xl">
             <span className="label-eyebrow text-white/70">
-              Climate-tech · Postharvest protection
+              Agri-Tech · Postharvest protection
             </span>
             <h1 className="font-serif font-bold mt-5 text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight">
               Eliminating food loss through the world’s first thermally adaptive coating.
