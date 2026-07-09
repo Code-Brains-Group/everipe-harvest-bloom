@@ -108,9 +108,12 @@ function Tech() {
         <div className="container-x">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="reveal order-2 lg:order-1">
-              <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl bg-white flex items-center justify-center border border-border">
-                {/* Placeholder for What it is made from image */}
-                <div className="text-ink/40 font-serif text-xl">Image Placeholder</div>
+              <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl bg-white border border-border">
+                <img
+                  src={macro}
+                  alt="Close-up of a plant-based protective coating on produce"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
